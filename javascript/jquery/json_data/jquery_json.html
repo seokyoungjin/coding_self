@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script defer src="./common.js"></script>
+</head>
+<body>
+<!-- 
+json_data폴더
+ ㄴ jquery_json.html
+ ㄴ common.js
+ ㄴ data.json 
+-->
+    <div class="loading">로딩....</div>
+
+    <article class="json-01">
+        <h2> 이미지 갤러리 </h2>
+        <ul>
+            <!-- 
+                <li><img src="../../img/01.jpg"></li>
+                <li><img src="../../img/01.jpg"></li>
+                <li><img src="../../img/01.jpg"></li> 
+            -->
+        </ul>
+        <style>
+            .json-01{width:70%; margin:100px auto;}
+            ul{
+                list-style-type: none; padding:0;
+                display: flex; 
+                justify-content: space-between;
+            }
+            li{width:32%;}
+            img{width:100%; vertical-align: top;}
+        </style>
+    </article>
+
+
+    <article class="json-01">
+        <h2> 이미지 갤러리2 </h2>
+        <ul>
+            <!-- 
+                <li><img src="../../img/01.jpg"> 상품명01 </li>
+                <li><img src="../../img/01.jpg"> 상품명02 </li>
+                <li><img src="../../img/01.jpg"> 상품명03 </li> 
+            -->
+        </ul>
+    </article>
+
+
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex_for_if.html -->
+    <article class="ex1">
+        <h2>상품리스트</h2>
+
+        <ul>
+            <!-- 
+            <li>
+                <img src="./img/01.jpg">
+                상품명 01
+            </li>
+            <li>
+                <img src="./img/02.jpg">
+                상품명 02
+            </li>
+            <li>
+                <img src="./img/03.jpg">
+                상품명 03
+            </li> -->
+        </ul>
+
+        <style>
+            .ex1{width:1200px; margin:100px auto;}
+            .ex1 ul{display: flex; padding:0; list-style: none;}
+            .ex1 ul li{width:30%; margin:3% 0;}
+            .ex1 ul li img{width:100%;}
+        </style>
+
+        <script>
+            const elEx1_ul = document.querySelector('.ex1 ul');
+
+            // [{이미지URL,이미지명},{},{}]
+            let data = [
+                {url:'./img/01.jpg',tit:'상품명 1'},
+                {url:'./img/02.jpg',tit:'상품명 2'},
+                {url:'./img/03.jpg',tit:'상품명 3'}
+            ];
+            // data[0].url
+            // data[0].tit
+            
+            let dataLi = '';
+
+            for(let i=0; i<data.length; i++){
+                dataLi += `<li>
+                                <img src="${data[i].url}">
+                                ${data[i].tit}
+                            </li>`;
+            }
+
+            elEx1_ul.innerHTML = dataLi;
+            
+                        
+        </script>
+    </article>
+
+<article class="ex2">
+    <h2>FAQ</h2>
+    <ul>
+        <li>
+            1. 질문입니다
+            <div>1. 답변입니다.</div>
+        </li>
+        <li>
+            2. 질문입니다
+            <div>2. 답변입니다.</div>
+        </li>
+        <li>
+            3. 질문입니다
+            <div>3. 답변입니다.</div>
+        </li>
+    </ul>
+
+    <style>
+        .ex2{width:50%; margin:200px auto;}
+        .ex2 ul{list-style: none;padding:0;}
+        .ex2 ul li{border-top:1px solid #000; padding:20px 0;}
+        .ex2 ul li div{background: #eee; padding:60px; display:none;}
+
+        .ex2 ul li.active div{display:block;}
+    </style>
+
+    <script>
+        const elEx2_li = document.querySelectorAll('.ex2 ul li');
+        //li클릭시 클래스 추가(class명 => active)
+
+        for(let i=0; i<elEx2_li.length; i++){
+            elEx2_li[i].addEventListener('click',function(){
+                // console.log(i)
+                elEx2_li[0].classList.remove('active');
+                elEx2_li[i].classList.add('active');
+
+                // classList- > add(),remove(),toggle()
+            });
+        }
+    </script>
+
+    
+</article>
+
+
+
+
+
+
+</body>
+</html>
+

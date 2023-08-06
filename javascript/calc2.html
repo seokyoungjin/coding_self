@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- calc2.html -->
+    <script>
+        // 비교연산자
+
+        let a = 10;
+        let b = 20;    
+        // a + b
+
+        let ab = [10, 20];        
+        /*  ab[0] = 10;
+            ab[1] = 20;
+            ab[0] + ab[1] 
+        */
+
+        // 비교연산은 값으로 true or false 두개의 값중에 한가지가 결과값으로 나옴
+
+        // a < b  = true(참)
+        // a > b  = false(거짓)
+
+        // (a*2) == b  true (좌항과 우항이 동등)
+        // a == '10'   true (숫자 10, 문자 10)
+        // a === '10'  false (===일치연산자 값, 타입 일치해야함)
+
+        // a != '10'   false  ( !부정기호)
+        // a !== '10'  true   (값과,타입이 다르다)
+
+        // a <= b (b가 a보다 크거나 같다)
+        // a >= b (b가 a보다 크거나 같다)
+      
+        console.log(
+            a < b,
+            a > b,
+            a == '10',
+            a === '10'
+        )
+    </script>
+
+    <div class="ex-1">
+        <h2>좋아하는 숫자를 입력하시오.</h2>
+        <div>  </div>
+        <button>시작!</button>
+    </div>
+
+    <script>
+        const el_ex1 = document.querySelector('.ex-1 div');
+        const el_ex1_btn = document.querySelector('.ex-1 button');
+
+        // 1~10 숫자는 true / 그 이상일때는 false
+        el_ex1_btn.addEventListener('click',function(){  
+            let ex1_num = prompt('좋아하는 숫자를 입력하세요!');
+
+            el_ex1.textContent = ex1_num <= 10;
+        })
+    </script>
+
+
+    <div class="ex-2">
+        <h2>미성년자 출입 금지!!!</h2>
+        <div>  </div>
+        <button>시작!</button>
+    </div>
+
+<script>
+    const el_ex2 = document.querySelector('.ex-2 div');
+    const el_ex2_btn = document.querySelector('.ex-2 button');
+
+    // 1~10 숫자는 true / 그 이상일때는 false
+    el_ex2_btn.addEventListener('click',function(){  
+        let ex2_num = prompt('나이를 입력하세요!!');
+
+        if( ex2_num >= 19 ){
+            el_ex2.textContent = '환영합니다!!';
+        }else{  
+            el_ex2.textContent = '미성년자시군요! 어여 나가시오!!';
+        }
+
+    })
+</script>
+
+<div class="ex-3">
+    <h2>색상을 입력하시오.</h2>
+    <div class="color">
+        <span>red</span>
+        <span>blue</span>
+    </div>
+    <button>시작!</button>
+    <style> 
+        .color span{ 
+            display: inline-block; padding:40px; 
+            border:1px solid #000;
+        }
+    </style>
+</div>
+
+<script>
+    const el_red = document.querySelector('.color span:nth-of-type(1)');
+    const el_blue = document.querySelector('.color span:nth-of-type(2)');
+    const el_ex3_btn = document.querySelector('.ex-3 button');
+
+    el_ex3_btn.addEventListener('click',function(){ 
+        let inputColor = prompt('색상을 입력하시오!!');        
+        
+        if(inputColor == 'red'){
+            el_red.style="background-color:red";            
+            el_blue.style="background-color:#fff";            
+        }else{
+            el_blue.style="background-color:blue";          
+            el_red.style="background-color:#fff";              
+        }
+    });
+</script>
+
+
+<script>
+
+    let id = 'admin';
+    let pw = '1234';
+
+    let idPromt = prompt('아이디를 입력하세요');
+    let pwPromt = prompt('패스워드를 입력하세요');
+
+    // 2개의 값이 맞을때
+    // 아이디가 틀렸을때 
+    // 패스워드가 틀렸을때 
+    if(id == idPromt){
+        //true
+        if(pw == pwPromt){
+            console.log('환영합니다.');
+        }else{
+            console.log('패스워드를 다시 입력하세요.');
+        }
+
+    }else{
+        //false
+        console.log('아이디를 다시입력하세요.');
+    }
+    
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+     id == '내가입력한값'
+
+     pw == '내가입력한값'
+
+
+
+     true  /  false
+
+
+
+
+               
+
+
+
+
+
+</body>
+</html>

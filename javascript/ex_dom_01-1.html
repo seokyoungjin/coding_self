@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex_dom_01-2.html     -->
+
+    <div class="ex1">
+        <button>01</button>
+        <button>02</button>
+        <button>03</button>
+    </div>
+
+    <script>
+        const elBtn = document.querySelectorAll('.ex1 button');
+
+        // elBtn[0].addEventListener('click',function(){   })
+        // elBtn[1].addEventListener('click',function(){   })
+        // elBtn[2].addEventListener('click',function(){   })
+
+        elBtn.forEach(function(v,k){
+            //elBtn의 선택자 갯수 만큼 {}안의 명령을 실행하라
+            //매개변수(elBtn값, elBtn키, elBtn 전체 값)
+            //3번 실행  
+            elBtn[k].addEventListener('click',function(){   });
+            v.addEventListener('click',function(){   });
+
+            v.classList.add('active');
+            //classList (add,remove,toggle,contains)
+
+            v.innerHTML = '<img >';
+        });
+
+
+        for(let i=0; i<elBtn.length; i++){
+            elBtn[i].addEventListener('click',function(){   });
+        }
+
+        let a = [10,20,30,40], total=0;
+        a.forEach(function(v){
+            total += v;
+        });
+    </script>
+
+    <div class="ex2">
+        <h2>계산기</h2>
+        <p>0</p>
+        <div>
+            <button>0</button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+        </div>
+        <div>
+            <button>+</button>
+            <button>-</button>
+            <button>*</button>
+            <button>/</button>
+            <button>=</button>
+        </div>
+        <style>
+            .ex2{width:280px; 
+                text-align: center; 
+                border:1px solid #000;
+                padding:40px;
+            }
+            .ex2 p{background-color: #000; color:#fff; padding:10px;}
+            .ex2 div:nth-of-type(2) button{background-color: aquamarine;}
+            .ex2 div:nth-of-type(2) button:last-child{
+                background-color: rgb(255, 251, 127);
+            }
+            button{width:50px; height:50px; margin:3px 0;}
+        </style>
+
+        <script>
+            const button = document.querySelectorAll('.ex2 button');
+            const result = document.querySelector('.ex2 p');
+
+            let calc = '',str='';
+
+            button.forEach(function(btn){
+                btn.addEventListener('click',function(){
+                    str = btn.textContent;
+                    
+                    if(str != '='){
+                        calc += str;
+                    }else{
+                        calc = eval(calc);
+                    }
+                    result.textContent = calc;
+                    
+
+                    //초기화(계산후 calc 빈값으로 만들기)
+                    if(str == '=') calc = '';
+                })
+            });
+        </script>
+
+    </div>
+
+    <div class="ex3">
+        <h2> classList </h2>
+        <div><p>01</p></div>
+        <button>Start</button>
+        <style>
+            .ex3{margin:100px 0;}
+            .ex3 div{padding:60px; border:1px solid #000}
+            .ex3 div p{
+                width:100px; height:100px; 
+                background-color: rgb(248, 253, 102);
+
+                animation: play 10s infinite alternate;
+                animation-play-state: paused;
+            }
+            .ex3 div p.active{
+                animation-play-state: running;
+            }
+
+            @keyframes play {
+                0%{transform:translateX(0);}
+                100%{transform:translateX(1000px);}
+            }
+
+        </style>
+
+        <script>
+
+            const ex3Btn = document.querySelector('.ex3 button');
+            const ex3Ptag = document.querySelector('.ex3 p');
+
+            ex3Btn.addEventListener('click',function(){
+                ex3Btn.classList.toggle('active');
+                ex3Ptag.classList.toggle('active');
+
+                if(  ex3Btn.classList.contains('active')  ){
+                    ex3Btn.textContent = 'Stop';
+                }else{
+                    ex3Btn.textContent = 'Start';
+                }
+
+            });
+        </script>
+    </div>
+
+    <div class="ex4">
+        <h2> Tab </h2>
+        <nav class="t-btn">
+            <button class="active">Tab 01</button>
+            <button>Tab 02</button>
+            <button>Tab 03</button>
+        </nav>
+        <div class="t-contents">
+            <div class="active">tab contents 01</div>
+            <div>tab contents 02</div>
+            <div>tab contents 03</div>
+        </div>
+    </div>
+
+    <style>
+        .ex4{ margin:100px 0 300px;}
+        .t-btn button{width:100px;}
+        .t-btn button.active{background: rgb(180, 255, 50);}
+
+        .t-contents{ position:relative; }
+        .t-contents div{
+            position:absolute; left:0; top:0;
+            width:100%; height:200px;
+            background-color: #eee;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            display: none;
+        }
+        .t-contents div.active{display: flex;}
+    </style>
+
+    <script>
+        const ex4Btn = document.querySelectorAll('.t-btn button');
+        const ex4Contents = document.querySelectorAll('.t-contents div');
+        let idx = 0;
+
+        ex4Btn.forEach(function(el,key){
+            el.addEventListener('click',function(){
+                ex4Btn[idx].classList.remove('active');
+                ex4Btn[key].classList.add('active');
+
+                ex4Contents[idx].classList.remove('active');
+                ex4Contents[key].classList.add('active');
+                idx = key;
+            })
+        })
+
+
+
+    </script>
+
+
+
+
+
+</body>
+</html>
+
+

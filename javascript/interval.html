@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- interval.html -->
+    <script>
+        // setInterval, setTimeout <=> clearInterval, clearTimeout
+        let loop; 
+        function interval(){
+            loop= setInterval(function(){ 
+                    console.log(100);
+                },1000);
+        }
+        interval();
+        
+        setTimeout(function(){ 
+            clearInterval(loop);
+        }, 3100);
+
+        setTimeout(function(){ 
+            interval();
+        }, 6000);
+
+    </script>    
+
+    <article class="ex1">
+        <h2>카운트</h2>
+        <div>0</div>
+        <style>
+            .ex1{margin:100px; text-align: center;}
+            .ex1 div{
+                font-size:10rem;
+                background-color:#ddd;
+            }
+        </style>
+        <script>
+            const elEx1 = document.querySelector('.ex1 div');
+
+            let count = 0;
+            let countInterval = setInterval(function(){
+                                    if(count < 100){
+                                        count++;
+                                        elEx1.textContent = count;
+                                        elEx1.style = `width:${count}%`;
+                                    }else{
+                                        clearInterval(countInterval);
+                                    }
+                                },100);
+        </script>
+    </article>
+
+
+</body>
+</html>

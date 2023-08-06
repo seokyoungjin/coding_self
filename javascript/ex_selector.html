@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex_selector.html     -->
+
+    <div class="result">
+        제목 : <code></code>
+        학습목표 : <code></code>
+    </div>
+    <script>
+        let data1 = 'javascript';
+        let data2 = '선택자안에 내용 넣기';
+
+        const ele_1 = document.querySelector('.result code:nth-of-type(1)');
+        const ele_2 = document.querySelector('.result code:nth-of-type(2)');
+
+        //셀렉터 텍스트 가져오기
+        ele_1.textContent;
+
+        // 셀렉터 텍스트 변경
+        ele_1.textContent = data1;
+        ele_2.textContent = data2;
+
+
+    </script>
+
+
+    <div class="number">
+        <button>1</button>
+        <button>2</button>
+    </div>
+
+    <script>
+        // 1. 2개의 button선택자안에 내용 가져오기
+        // 2. 가져온 내용은 string 타입이다. number 타입으로 변경하시오.
+        // 3. 각각의 버튼값에 1을 더하시오.
+        // 4. button선택자 내용을 1을 더한값으로 변경하시오.
+
+        const ele_btn1 = document.querySelector('.number button:nth-child(1)');
+        const ele_btn2 = document.querySelector('.number button:nth-child(2)');
+
+         ele_btn1.textContent;
+
+        //  Number(값);
+        ele_btn1.textContent = Number(ele_btn1.textContent) + 1;
+        ele_btn2.textContent = Number(ele_btn2.textContent) + 1;
+    </script>
+
+    <div class="photo">
+        <img src="">
+        <p>이미지 제목</p>
+    </div>
+
+    <script>
+        const url_1 = './img/01.jpg';
+        const url_2 = './img/02.jpg';
+        const url_3 = './img/03.jpg';
+
+        let subj_1 = '이미지 1';
+        let subj_2 = '이미지 2';
+        let subj_3 = '이미지 3';
+
+        const image = document.querySelector('.photo > img');
+        image.src = url_1;
+
+        const subject = document.querySelector('.photo > p');
+        subject.textContent = subj_1;
+        subject.style = "font-size:5rem; color:#f00";
+    </script>
+
+
+    <div class="change">
+        <div>  A값 </div>
+        <div>  B값 </div>
+
+        <!-- 
+            <div>  B값 </div>
+            <div>  A값 </div> 
+        -->
+    </div>
+
+    <script>
+        // A값, B값 문자를 사용할수 없음
+        const elA = document.querySelector('.change > div:nth-of-type(1)');
+        const elB = document.querySelector('.change > div:nth-of-type(2)');
+
+        let a = elA.textContent;
+        let b = elB.textContent;
+
+        elA.textContent = b;
+        elB.textContent = a;
+    </script>
+
+    <div class="photo-change">
+        <img src="./img/01.jpg" alt="">
+        <img src="./img/02.jpg" alt="">
+    </div>
+
+    <script>
+        // 01.jpg, 02.jpg 서로 바꾸기
+        const elImg_1 = document.querySelector('.photo-change>img:nth-child(1)');
+        const elImg_2 = document.querySelector('.photo-change>img:nth-child(2)');
+        
+        let src_1 = elImg_1.src;
+        let src_2 = elImg_2.src;
+
+        elImg_1.src = src_2;
+        elImg_2.src = src_1;
+    </script>
+
+
+    <div class="txt-1" style="border:1px solid #000; padding:60px;">
+        <div> 
+            textContent -> 엘리먼트안에 텍스트만 컨트롤, 
+            src -> 이미지 엘리먼트안에 src속성값 컨트롤.
+
+            2개다 자바스크립트에서 속성이라고 함
+            속성은 기호(=)를 이용하여 값 변경 가능
+
+            ex) 선택자.textContent (선택자안의 텍스트를 받아옴)
+            ex) 선택자.textContent = '값' (선택자안의 텍스트 변경)
+        </div>
+        <p style="background: #eee; 
+                  padding:40px; 
+                  white-space: pre-line; "> 
+            div값을 이곳으로 이동해주세요 
+        </p>
+    </div>
+
+    <script>
+        const elTxt = document.querySelector('.txt-1 div');
+        const elP = document.querySelector('.txt-1 p');
+
+        elP.textContent = elTxt.textContent;
+        elTxt.textContent = '';
+    </script>
+
+    <div class="txt-2">
+        <img src="">
+        <p></p>
+    </div>
+
+    <script>
+        let imgUrl = "./img/05.jpg";    /* img src값에 넣어주세요 */
+        let imgTxt = "이번엔 통과";      /* p 태그안에 넣어주세요 */
+
+        const el_Img = document.querySelector('.txt-2 > img');
+        const el_Txt = document.querySelector('.txt-2 > p');
+
+        el_Img.src = imgUrl;
+        el_Txt.textContent = imgTxt;
+    </script>
+
+
+    <div class="txt-3">
+        <p></p>
+    </div>
+
+    <script>
+        let txt_p = "마지막 테스트!!!!!";    //p 태그안에 넣어주세요!
+
+        const elTxt_3 = document.querySelector('.txt-3 > p');
+        elTxt_3.textContent = txt_p;
+    </script>
+
+
+    <div class="count">
+        <p> 0 </p>
+        <button>좋아요</button>
+        <button>싫어요</button>
+    </div>
+
+    <script>
+        const elCounter_txt = document.querySelector('.count > p');
+        const elButton1 = document.querySelector('.count > button:nth-of-type(1)');
+        const elButton2 = document.querySelector('.count > button:nth-of-type(2)');
+
+        let num = 0;
+
+        elButton1.addEventListener('click',function(){   
+            elCounter_txt.textContent = ++num;
+        });
+        elButton2.addEventListener('click',function(){  
+            elCounter_txt.textContent = --num;
+        });
+    </script>
+
+
+    <div class="img-move" style="margin-bottom:500px;">
+        <img src="./img/01.jpg" width="200"><br>
+        <button>좌측</button>
+        <button>우측</button>
+    </div>
+
+    <script>
+        const elMove_img = document.querySelector('.img-move > img');
+        const elBtn_left = document.querySelector('.img-move > button:nth-of-type(1)');
+        const elBtn_right = document.querySelector('.img-move > button:nth-of-type(2)');
+
+        let moveNum = 0;
+
+        elBtn_left.addEventListener('click',function(){ 
+            moveNum -= 2;
+            elMove_img.style=`transform:translateX(${moveNum}00%);
+                              transition:.5s;`;
+         });
+        
+        elBtn_right.addEventListener('click',function(){
+            moveNum += 2;
+            elMove_img.style=`transform:translateX(${moveNum}00%);
+                              transition:.5s;`;
+        });
+
+        // `${변수명}00%`  
+    </script>
+
+
+
+</body>
+</html>

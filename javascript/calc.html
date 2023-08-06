@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- calc.html -->
+<div class="result"></div>
+
+<script>
+    // 산술연산자
+    const elResult = document.querySelector('.result');
+    elResult.innerHTML = '<h2>산술연산자</h2>';
+
+    let x=10, y=10, total=null;
+    total = x + y;
+
+    elResult.innerHTML += `${x} + ${y} = ${total}`;
+
+    x=20;
+    total = x*y;
+    
+    elResult.innerHTML += `<br>${x} * ${y} = ${total}`;
+ 
+    total = x-y;
+    elResult.innerHTML += `<br>${x} - ${y} = ${total}`;
+
+    total = x/y;
+    elResult.innerHTML += `<br>${x} / ${y} = ${total}`;
+
+
+    // 할당 연산자
+    let a= 10, b=10;
+    elResult.innerHTML += `<hr><h2>할당 연산자(변수에 값을 할당해서 갱신시킴)</h2>`;
+
+    elResult.innerHTML += `변수선언( a=10, b=10 )
+                           <br> a += b = ${a+=b}
+                            
+                           <br>
+                           ※문자를 할당시에는 추가, 숫자를 할당시에는 연산,
+                           모든 연산기호 이용 가능.
+                        `;
+    
+    // 증감(++), 감소(--) 연산자
+    let c = 100;
+    elResult.innerHTML += `<hr><h2>증감(++), 감소(--) 연산자</h2>`;
+    
+    elResult.innerHTML += ` 변수선언 (c = 100)
+                            <br> 
+                            연산자 기호는 값의 전, 후에 넣을수 있음
+
+                            <br><br>
+                            -> 이전일때는 기호에 따라 값이 즉시 변경됨
+                            -> 이후일때는 명령이 끝나고 난후에 변경됨
+                            
+                            <br><br>
+                            ex) <br>
+                            ++c => ${++c} <br>
+                            c++ => ${c++}<br>
+                            ${c}
+                        `;
+
+                    
+
+
+
+
+
+
+    
+
+
+
+    // querySelector() -> 엘리먼트 태그요소 선택자
+    // textContent -> 텍스트형태의 문자
+    // innerHTML -> HTML형태의 문자
+</script>
+
+
+
+
+
+
+    
+</body>
+</html>

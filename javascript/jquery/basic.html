@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <!-- jquery > basic.html -->
+    <div class="selector">
+        <h2> Jquery </h2>
+        <p>  $('선택자').메소드() </p>
+        <button>클릭이벤트</button>
+        <div>
+            $('선택자').addClass();       //add
+            $('선택자').removeClass();    //remove
+            $('선택자').toggleClass();    //toggle
+            $('선택자').hasClass();       //contains
+        </div>
+        <ul>
+            <li>01</li>
+            <li>02</li>
+            <li>03</li>
+        </ul>
+    </div>
+    <script>
+        $('.selector > p').css({
+            'background-color' : '#ddd',
+            border:'1px solid #000'
+        });
+
+        $('.selector button').click(function(){ 
+            let txt = $('.selector button').text();
+            $(this).text('텍스트 변경');
+
+            let width = $(this).width();  //가로사이즈
+            $(this).width(200);
+
+            let x = $(this).offset().left;
+
+            alert( x );
+        });
+
+        $('.selector div').addClass('active');
+
+        $('.selector li').click(function(){
+            let _this = $(this);
+            let idx = $(this).index();
+
+            let number = _this.text();            
+            alert( idx );
+        })
+
+/* 
+        $('선택자').메소드();
+        
+        css()
+        width(), height(), 
+        offset(절대값), position(상대값)
+
+        index()
+        text(), html()
+        click(function(){    })
+
+        바닐라하고 동일
+        if, for, foreach, setInterval, setTimeout
+*/
+
+    </script>
+    <style>.active{white-space: pre-line;}</style>
+
+
+
+
+    <article class="slide">
+        <h2>slideUp, slideDown, slideToggle</h2>
+        <div>
+            <ul>
+                <li>
+                    메뉴01
+                    <div>
+                        서브01<br>
+                        서브02<br>
+                        서브03<br>
+                    </div>
+                </li>
+                <li>
+                    메뉴02
+                    <div>
+                        서브01<br>
+                        서브02<br>
+                        서브03<br>
+                    </div>
+                </li>
+                <li>
+                    메뉴03
+                    <div>
+                        서브01<br>
+                        서브02<br>
+                        서브03<br>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <style>
+            .slide{ margin:200px 0 400px; }
+            .slide ul{
+                display: flex; list-style: none;
+                padding:0;
+            }
+            .slide ul li{ position:relative; width:150px;}
+            .slide ul li div{ 
+                position:absolute; left:0; top:20px;
+                background-color: #ddd;
+                padding:40px;
+                display: none;
+            }
+        </style>
+        <script>
+            $('.slide ul li').click(function(){
+                const _this = $(this);
+
+                //height 0, dispaly:none
+                $('.slide ul li div').stop().slideUp();  
+
+                //height 100%, dispaly:block;
+                _this.find('div').stop().slideDown();
+            })
+        </script>
+    </article>
+
+
+    <article class="fade">
+        <h2>fadeIn, fadeOut</h2>
+        <div>
+            <img src="../img/01.jpg">
+            <img src="../img/02.jpg">
+            <img src="../img/03.jpg">
+        </div>
+        <p>
+            <button>prev</button>
+            <button>next</button>
+        </p>
+        <style>
+            .fade{margin:200px 0; }
+            .fade div{width:400px; height:350px;  position: relative;}
+            .fade div img{
+                position:absolute; left:0; top:0; width:100%;
+                display:none;
+            }
+            .fade div img:first-child{display:block;}
+        </style>
+
+        <script>
+            let i = 0;
+            // setInterval(fadeFun, 2000);
+
+            function fadeFun(){
+
+                $('.fade div img').eq(i).fadeOut(1000);
+
+                if(i < 2){
+                    i++;
+                }else{
+                    i=0
+                }
+                // (i < 2) ? i++ : i=0;
+
+                // if(i > 0){
+                //     i--;
+                // }else{
+                //     i=2
+                // }
+
+                $('.fade div img').eq(i).fadeIn(1000);
+                // 0,1,2
+
+
+                $('.fade p').append(`<span>${i},</span>`)
+            }
+
+            $('.fade p button').eq(0).click(function(){
+                fadeFun('next');
+            })
+
+            $('.fade p button').eq(1).click(function(){
+                fadeFun('prev');
+            })
+
+
+        </script>
+
+
+    </article>
+
+
+
+</body>
+</html>
+

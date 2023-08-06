@@ -1,0 +1,100 @@
+
+<!-- async_await.html -->
+
+<div>
+    <p>0</p>
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+</div>
+
+
+<script>
+
+    async function data(){
+        let d = 5;
+
+        let result = new Promise(function(resolve,reject){
+                            setTimeout(function(){ 
+                                resolve(10)
+                            },100);                   
+                     })
+        d = await result;
+
+        // let result = fetch('calc.html');
+        // d = await result;            
+        // d = await d.text();
+
+        console.log(d)
+    }
+    data();
+
+
+
+    let ob = [];
+
+    function objectFn(x,y){
+        this.left = x;
+        this.top = y;
+    }
+
+    for(let i=0; i<5; i++){
+        ob.push( new objectFn(i, i*10)  ); 
+    }
+
+    const elObject = document.querySelectorAll('p');
+
+    elObject.forEach(function(p,k){
+        p.style = `position:absolute; 
+                    left:${ob[k].left}; 
+                    top:${ob[k].top};`;
+    })
+
+
+
+
+    //skill
+    let skillData = [
+        { html:'80%', txt :'마크업 잘함'},
+        { css:'40%', txt :'css 잘함'},
+        { js:'90%', txt :'js 잘함'},
+        { figma:'100%', txt :'figma 잘함'},
+        { design:'70%', txt :'디자인 잘함'}
+    ];
+
+    function skillFn(n, t, p){
+        this.name = n;
+        this.text = t;
+        this.per = p;
+
+        this.player = function(){
+            console.log(  
+                this.name,
+                this.per,
+                this.text
+            )
+        }
+    }
+
+    let skillArray = [];
+    skillData.forEach(function(skill){
+        skillArray.push(  
+            new skillFn(
+                    Object.keys(skill)[0], 
+                    skill.txt,
+                    skill[  Object.keys(skill)[0]  ]
+                )  
+        );
+    })
+
+   
+    skillArray[0].player
+   
+
+
+
+
+   
+
+</script>

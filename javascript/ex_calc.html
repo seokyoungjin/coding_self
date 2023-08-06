@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex_calc.html -->
+    <div class="result">
+        디자인 점수 : 
+        <code class="design">0</code>점<br>
+
+        HTML 점수 : 
+        <code class="html">0</code>점<br>
+
+        평균 : 
+        <code class="avg">0</code>점
+    </div>
+
+    <div>
+        <h2>제8회 지방선거</h2>
+        <ul>
+            <li>장소 : <code class="place"> </code></li>
+            <li>일정 : <code class="day"> </code></li>
+            <li>기타 : <code class="other"> </code></li>
+        </ul>          
+    </div>
+    <script>
+
+        let a = Number(  prompt('디자인 점수는?')  );
+        let b = Number(  prompt('HTML 점수는?')  );
+        let avg = (a + b) / 2;
+
+        const elDesign = document.querySelector('.design'),
+              elHTML = document.querySelector('.html'),
+              elAvg = document.querySelector('.avg');
+
+              elDesign.textContent = a;
+              elHTML.textContent = b;
+              elAvg.textContent = avg;
+
+        // 투표소
+        const place='강남초등학교', 
+              day='2022-06-01(수) / 오전 6시 ~ 오후 6시', 
+              other='신분증 지참(필수)....등';
+
+    </script>
+
+
+
+
+
+</body>
+</html>

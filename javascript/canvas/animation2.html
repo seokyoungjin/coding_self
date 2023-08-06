@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- animation.html -->
+    <style>canvas{border:1px solid #f00}</style>
+    <canvas width="1000" height="900"></canvas>
+
+    <script>
+        const canvas = document.querySelector('canvas');
+        const ctx = canvas.getContext('2d');
+        let size = {w:canvas.width, h:canvas.height};
+        
+        let p = {txt:100,ang:Math.PI*2};
+
+        let num = 0;
+        function drawFn(n){
+
+            p.txt = num;
+            p.ang = (Math.PI*2) * (num-25) / 100;
+            ctx.clearRect(0,0,size.w,size.h);
+
+            // ctx.save();
+            //     ctx.translate(0,400)
+            //     ctx.rotate(  Math.PI*1.5  );
+
+            //     ctx.beginPath();
+            //     ctx.lineWidth = 30;
+            //     ctx.strokeStyle = '#f00';
+            //     ctx.arc(200,200,100,0,p.ang);
+            //     ctx.stroke();
+            // ctx.restore();
+
+            ctx.beginPath();
+            ctx.lineWidth = 30;
+            ctx.strokeStyle = '#f00';
+            ctx.arc(200,200,100, Math.PI/ -2, p.ang);
+            ctx.stroke();
+
+
+            ctx.font = '40px serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(`${p.txt}%`,200,200);
+
+            if(num < n){
+                num++; 
+                requestAnimationFrame(()=> drawFn(n));
+            }
+
+            // cancelAnimationFrame();
+        }
+        drawFn(100);
+
+
+
+    </script>
+
+
+
+
+    
+</body>
+</html>

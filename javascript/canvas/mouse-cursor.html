@@ -1,0 +1,71 @@
+<!-- mouse-cursor.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <style>
+        body{height:3000px}
+        canvas{
+            width:100%; height:100%;
+            position:fixed; z-index:999999;
+            left:0; top:0;
+            pointer-events: none;
+        }
+    </style>
+    <canvas></canvas>
+
+    <script>
+        const canvas = document.querySelector('canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width =  window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let r = 10, alpha=0;
+
+        function cursorFn(x,y){
+            alpha += 0.1;
+            
+            if(alpha > 0.8){
+                alpha=0.4;
+                ctx.clearRect(0,0,canvas.width,canvas.height);
+            }else{
+                requestAnimationFrame(function(){   cursorFn(x,y)  })
+            }
+
+            ctx.beginPath();
+            ctx.fillStyle = "#f00";
+            ctx.globalAlpha = alpha;
+            ctx.arc(x+10,y,r,0,Math.PI*2,false);
+            ctx.fill();
+
+        }
+
+        window.addEventListener('mousemove',function(e){
+            cursorFn(e.clientX, e.clientY);
+        });
+
+        window.addEventListener('mouseover',function(e){
+            if(   e.target.tagName  == 'IMG'  ){
+                r = 50;
+            }else{
+                r = 10;
+            }
+        });
+    </script>
+
+
+    
+    <main>
+        <img src="../img/03.jpg">
+    </main>
+    
+
+
+</body>
+</html>

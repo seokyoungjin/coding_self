@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex_click-class.html     -->
+    <div class="popup"> 팝업 내용 </div>
+    <button class="btn"> 팝업내용보기 </button>
+
+<!-- 버튼(.btn)을 클릭하면  div(.popup)에 active클래스를 추가 -->
+<script>
+    const elBtn = document.querySelector('.btn');
+    const elPopup = document.querySelector('.popup');
+    
+    elBtn.addEventListener('click',function(){
+        elPopup.classList.add('active');
+        // elPopup.classList.remove('active');
+    });
+</script>
+
+
+<style>
+    .popup{ 
+        width:500px; height:500px;
+        border:1px solid #000;
+        box-shadow: 10px 10px 20px rgba(0,0,0,0.4);
+        position: absolute;
+        left:30%; top:20%;
+        display: none;
+    }
+    .popup.active{ display: block;}
+</style>
+
+
+
+
+
+</body>
+</html>

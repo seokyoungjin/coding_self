@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 
+    javascript > storage폴더
+    ㄴ cookie.html 
+-->
+    <div class="popup" style="display:none;">
+        <img src="../img/01.jpg">
+        <p>
+            <input type="checkbox" >
+            오늘하루동안보지않기 
+            <button> X </button>
+        </p>    
+    </div>
+
+    <script>
+        const button = document.querySelector('button');
+        const input = document.querySelector('input');
+        const popup = document.querySelector('.popup');
+
+        button.addEventListener('click',function(){
+            let cookieDate = new Date();
+            cookieDate.setSeconds( cookieDate.getSeconds() + 10 )
+
+            if(  input.checked ){
+                document.cookie = `test=cookie;expires=${ cookieDate.toUTCString() }`;
+            }
+
+            popup.style.display = 'none';
+        });
+       
+        if(  document.cookie.match('test')  ){
+            // console.log('쿠키 있따!!!!')
+            popup.style.display = 'none';
+        }else{
+            // console.log('쿠키 읍따!!!!')
+            popup.style.display = 'block';
+        }
+
+
+
+
+
+
+        // DATE
+        let today = new Date();
+
+        console.log( today );
+        console.log( today.getFullYear() + "년도" );
+        console.log( today.getMonth()+1 + "월" ); //0~11
+        console.log( today.getDate() + "일" );
+
+        let day = ['일','월','화','수','목','금','토'];
+        console.log( day[today.getDay()] + "요일" );
+
+        console.log( today.getHours() + '시' );
+        console.log( today.getMinutes() + '분' );
+        console.log( today.getSeconds() + '초' );
+        console.log( today.getTime() + '초' );
+      
+    </script>
+
+
+    <div class="date">
+        종강일까지 남은 일수 : <code> 0 </code>일
+
+        <script>
+            const elCode = document.querySelector('.date code');
+            let sDate = new Date();
+            let eDate = new Date('2022-09-05:18:20:00');
+            let calc = (eDate - sDate) / (24*60*60*1000);
+            elCode.textContent = Math.round(calc);
+
+
+            
+
+            
+
+
+        </script>
+    </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+
+header{ text-align: center;}
+header a{ padding:0 30px; color:#000;}
+header a.active{ color:#f00; }

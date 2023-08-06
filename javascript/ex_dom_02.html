@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- ex_dom_02.html -->
+    <article class="ex1">
+        <h2> offset값 활용 </h2>
+        <div>
+            <div><img src="./img/01.jpg"></div>
+            <ul>
+                <li><img src="./img/01.jpg"></li>
+                <li><img src="./img/02.jpg"></li>
+                <li><img src="./img/03.jpg"></li>
+            </ul>
+            <p></p>
+        </div>
+        <style>
+            img{vertical-align: top;}
+            .ex1{width:40%; margin:0 auto;}
+            .ex1 >div >div{}
+            .ex1 >div >div img{width:100%;}
+            .ex1 ul{
+                list-style: none; padding:0;
+                display:flex; justify-content: space-between;
+                align-items: flex-start;
+            }
+            .ex1 ul li{width:31%;}
+            .ex1 ul li img{width:100%;}
+            .ex1 p{
+                border:3px solid #f00;
+                position:absolute; left:0; top:0;
+                transition: 0.5s;
+                margin:0;
+                box-sizing: border-box;
+            }
+        </style>
+        <script>
+            function init(){
+                const elThumb = document.querySelectorAll('.ex1 li'),
+                      elDetail = document.querySelector('.ex1 > div > div > img'),
+                      elPtag = document.querySelector('.ex1 p');
+                
+                let elOffset = [];
+                elThumb.forEach(function(el,key){
+                    elOffset.push(
+                        {
+                            w:el.offsetWidth,
+                            h:el.offsetHeight,
+                            x:el.offsetLeft,
+                            y:el.offsetTop
+                        }                    
+                    )
+                    
+                    el.onclick = function(){    
+                        elDetail.src = el.children[0].src;
+
+                        elPtag.style = `
+                            width:${el.offsetWidth}px; 
+                            height:${el.offsetHeight}px;
+                            left:${el.offsetLeft}px; 
+                            top:${el.offsetTop}px;
+                        `;
+                    }
+
+                })
+
+            }
+            window.onload = init;
+
+        </script>
+    </article>
+
+
+    <article class="ex2">
+        <h2>offsetWidth 활용</h2>
+        <div>
+            <img src="img/01.jpg">
+            <p>
+                <img src="img/02.jpg">
+                <img src="img/03.jpg">
+                <img src="img/04.jpg">
+            </p>
+        </div>
+        <style>
+            .ex2{width:200px; margin:100px auto;}
+            .ex2 div{position: relative;}
+            .ex2 div img{width:100%; height:200px;}
+
+            .ex2 div p,
+            .ex2 div p img{
+                position: absolute; left:0; top:0; width:100%; height:100%;
+                margin:0; 
+                z-index:-1;
+                transition: .5s;
+            }
+        </style>
+
+        <script>
+            const elImg = document.querySelector('.ex2 div > img');
+            const elImgView = document.querySelectorAll('.ex2 div p img');
+
+            elImg.onclick = function(){
+                elImg.classList.toggle('active');
+                
+                elImgView.forEach((el,key)=>{
+                    
+                    if(elImg.classList.contains('active')){
+                        el.style = `left:${el.offsetWidth * (key+1)}px`;
+                    }else{
+                        el.style = `left:0px`;
+                    }
+
+                });
+            }
+        </script>
+    </article>
+
+    
+
+
+</body>
+</html>
+

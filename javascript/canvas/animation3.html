@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- animation.html -->
+    <style>canvas{border:1px solid #f00}</style>
+    <canvas width="1000" height="900"></canvas>
+
+    <script>
+        const canvas = document.querySelector('canvas');
+        const ctx = canvas.getContext('2d');
+        let size = {w:canvas.width, h:canvas.height};
+
+
+        let c = {x:100,y:100};
+
+        function CreateCircle(){
+            this.x = 100,
+            this.y = 100
+        }
+
+        let item = new CreateCircle();
+        let item2 = new CreateCircle();
+
+        item2.x = 200;
+
+
+
+
+
+        function drawFn(n){
+                ctx.beginPath();
+                ctx.lineWidth = 30;
+                ctx.strokeStyle = '#f00';
+                ctx.arc(c.x,c.y,100,0,Math.PI*2);
+                ctx.stroke();          
+        }
+        drawFn(100);
+
+
+
+    </script>
+
+
+
+
+    
+</body>
+</html>

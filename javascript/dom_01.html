@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- dom_locate.html -->
+    <header>
+        <nav>
+            <a href="https://naver.com">메뉴01</a>
+            <a href="https://kakaobrain.com">메뉴02</a>
+        </nav>
+    </header>
+
+    <script>
+        const elMenu = document.querySelectorAll('nav a');        
+
+        elMenu.forEach(function(aTag, key, all){
+
+            aTag.addEventListener('click',function(){
+                //브라우저 기능 차단
+                event.preventDefault();
+
+                setTimeout(function(){   
+                    location.href = aTag.href;
+                },2000);
+            });
+
+        });
+
+    </script>
+
+
+    <main>
+        <section>
+            <h2>work</h2>
+            <div>
+            <!--
+                <figure><img src="img/01.jpg"></figure>
+                <figure><img src="img/01.jpg"></figure>
+                <figure><img src="img/01.jpg"></figure>
+             -->
+            </div>
+        </section>
+
+        <div class="pop">
+            <!-- <img src=""> -->
+        </div>
+
+        <style>
+            .pop{
+                position:fixed; top:0; left:0; 
+                width:100%; height:100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: rgba(0,0,0,0.6);
+                display: none;
+            }
+            .pop.active{display: flex;}
+
+            section div{
+                display: flex; 
+                justify-content: space-between;
+            }
+            section div figure{width:30%; margin:3% 0;}
+            section div figure img{width:100%; height:100%;}
+        </style>
+
+        <script>
+            let workData = ['img/01.jpg','img/02.jpg','img/03.jpg'];
+            const elWork = document.querySelector('section div');
+
+            let workTags='';
+            workData.forEach(function(value){  
+                workTags += `<figure><img src="${value}"></figure>`;
+            });
+            elWork.innerHTML = workTags;
+
+
+            const elFigure = document.querySelectorAll('section div figure');
+                       
+            elFigure.forEach(function(figure,key){
+                figure.addEventListener('click',function(){
+                    const elPop = document.querySelector('.pop');
+                    // elPop.style = 'display:flex';
+                    elPop.innerHTML = `<img src="${workData[key]}">`;
+                    elPop.classList.add('active');
+                });
+            })
+
+
+
+        </script>
+    </main>
+
+
+
+
+
+
+</body>
+</html>

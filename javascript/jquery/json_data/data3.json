@@ -1,0 +1,46 @@
+{
+    "product":[
+        {
+            "code":1, 
+            "name":"상품명 1", 
+            "price":1000, 
+            "detail":"상품1 상세설명....",
+            "photo":"../../img/01.jpg"
+        },
+        {
+            "code":2, 
+            "name":"상품명 2", 
+            "price":2000, 
+            "detail":"상품2 상세설명....",
+            "photo":"../../img/02.jpg"
+        },
+        {
+            "code":3, 
+            "name":"상품명 3", 
+            "price":3000, 
+            "detail":"상품3 상세설명....",
+            "photo":"../../img/03.jpg"
+        },
+        {
+            "code":4, 
+            "name":"상품명 4", 
+            "price":4000, 
+            "detail":"상품4 상세설명....",
+            "photo":"../../img/04.jpg"
+        },
+        {
+            "code":5, 
+            "name":"상품명 5", 
+            "price":5000, 
+            "detail":"상품5 상세설명....",
+            "photo":"../../img/05.jpg"
+        },
+        {
+            "code":6, 
+            "name":"상품명 6", 
+            "price":6000, 
+            "detail":"상품6 상세설명....",
+            "photo":"../../img/06.jpg"
+        }        
+    ]
+}

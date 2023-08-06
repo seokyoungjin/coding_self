@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- array_for_if.html -->
+    <script>
+        let arrNum = [10,20,30,40,50];
+        let total = 0;
+
+        for(let i=0; i < 5; i++){
+            // 반복할명령
+            total += arrNum[i];
+        }
+    </script>
+
+
+
+    <article>
+        <h2>1~10까지의 합을 구하시오.</h2>
+        <div class="print1"> </div>
+    </article>
+
+    <article>
+        <h2>1~100까지의 수 중에서 2의 배수 합을 구하시오</h2>
+        <div class="print2"> </div>
+    </article>
+    
+    <article>
+        <h2>1~100까지의 수 중에서 3,6,9 숫자를 찾아 출력하시오 <br>
+            <small>-> ex(3,6,9,13,16,19,23,26,29...)</small>
+        </h2>
+        <div class="print3"> </div>
+    </article>
+
+    <article>
+        <h2>
+            구구단 3단을 출력하시오.
+        </h2>
+        <p class="danBtn">
+            
+        </p>
+        <div class="print4"> </div>
+
+    </article>
+
+    <script>
+        const print1 = document.querySelector('.print1'),
+              print2 = document.querySelector('.print2'),
+              print3 = document.querySelector('.print3');
+
+        let result1=0;
+
+        for(let i=1; i<=10; i++){
+            result1 += i;
+        }
+        print1.textContent = result1;
+
+
+        let result2=0;
+        for(let i=1; i<=100; i++){
+            if(i%2 == 0) { 
+                result2 += i; 
+            }
+        }
+        print2.textContent = result2;
+
+
+        let num=0;
+        for(let i=1; i<=100; i++){
+            num = i%10;
+            // 1,2,3,4,5,6,7,8,9,0
+
+            if(num%3 == 0 && num != 0) { 
+                print3.textContent +=     i+',';
+            }
+            
+        }
+
+        const print4 = document.querySelector('.print4');
+        const danBtn = document.querySelector('.danBtn');
+        
+        // 2,3,4,5,6,7,8,9
+        for(let i=2; i<=9; i++){
+            danBtn.innerHTML += `<button>${i}단</button>`;
+        }
+
+        const danBtnAll = document.querySelectorAll('.danBtn button');
+       
+
+        for(let i=2; i<=9; i++){
+            danBtnAll[i-2].addEventListener('click',function(){ 
+                gugudan(i);
+            });
+        }
+
+        function gugudan(dan){
+            let danStr='';
+
+            for(let i=1; i<10; i++){
+                danStr += `${dan} x ${i} = ${dan*i}<br>`;
+            }
+            print4.innerHTML = danStr;
+        }
+        
+        
+
+
+
+
+        
+/* 
+        함수(fucntion)
+        -> 코드 재활용성을 높여줌
+        -> 데이터를 주고 받을 수 있음
+        -> 원하는 시점에 실행시킬 수 있음
+ */
+
+
+    </script>
+
+
+
+
+
+</body>
+</html>

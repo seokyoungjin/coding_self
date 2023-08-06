@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- iframe_board.html -->
+
+
+
+<!-- header -->
+
+<iframe 
+    id="ifr"
+    src="http://mkyu.dothome.co.kr/bbs/board.php?bo_table=free" 
+    width="800" height="1000" frameborder="no" scrolling="no">
+</iframe>
+
+<footer>copyright</footer>
+
+<script>
+    window.addEventListener('message',function(e){
+        // console.log( e.data.height );        
+        ifr.style.height=`${e.data.height + 50}px`;
+    });
+</script>
+
+
+
+
+<!-- footer -->
+
+
+<!-- 
+부모 -> 자식이 보내온 메세지를 받는다.
+     -> message이벤트로 값을 전달 받음
+     -> 전달 받은 값을 이용해서 iframe height값 변경
+
+자식 -> 부모한테 자신의 사이즈를 보낸다.
+     -> postMassage() 메소드로 값을 보냄
+ -->
+
+
+
+
+
+</body>
+</html>

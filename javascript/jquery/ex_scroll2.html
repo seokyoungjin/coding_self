@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- ex_scroll2.html -->
+
+    <main>
+        <section>01</section>
+        <section>02</section>
+        <section>03</section>
+        <section>04</section>
+        <section>05</section>
+    </main>
+
+    <aside>
+        <a class="active"></a>
+        <a></a>
+        <a></a>
+        <a></a>
+        <a></a>
+    </aside>
+
+    <style>
+        body{margin:0}
+        section {
+            height: 100vh;
+            font-size: 5rem;
+            display: flex; justify-content: center; align-items: center;
+        }
+        section:nth-child(odd){background-color: #eee;}
+        aside{
+            position:fixed; right:5%; top:50%;
+        }
+        a{
+            width:10px; height:10px;
+            border:1px solid #000;
+            border-radius: 50%;
+            display: block; margin:10px 0;
+        }
+        a.active{background-color: #000;}
+    </style>
+
+    <script>
+        let scrollTop;
+        let offsetTop = [
+            $('section').eq(0).offset().top,
+            $('section').eq(1).offset().top,
+            $('section').eq(2).offset().top,
+            $('section').eq(3).offset().top,
+            $('section').eq(4).offset().top
+        ];
+
+        $(window).on('scroll',function(){
+            // 스크롤양
+            scrollTop = $(window).scrollTop()
+
+            $('aside a').each(function(i){
+                if(offsetTop[i] < scrollTop){
+                    $('aside a').removeClass('active')
+                    .eq(i).addClass('active');
+                }
+            });
+
+        });
+        
+
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

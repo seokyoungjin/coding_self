@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- canvas > basic.html -->
+    <style>
+        canvas{ border:1px solid #000;}
+    </style>
+    <canvas width="1000" height="900"></canvas>
+
+    <script>
+        const canvas = document.querySelector('canvas');
+        const ctx = canvas.getContext('2d');
+
+        ctx.fillStyle = '#f00';
+        ctx.fillRect(50,50,100,100);
+
+        ctx.strokeStyle = '#f00';
+        ctx.strokeRect(200,50,100,100);
+
+        // x,y,r,start,end,cw
+        ctx.arc(450,100,50,0,Math.PI * 2,false);
+        ctx.stroke();
+
+        // 선굵기, 선색상, 선끝모양, 선좌표
+        ctx.beginPath();
+        ctx.strokeStyle = '#00f';
+        ctx.lineWidth = 10;
+        ctx.lineCap = "round";    /* round, square, butt */
+        ctx.lineTo(700,100);
+        ctx.lineTo(800,100);
+        ctx.stroke();
+        ctx.closePath();
+
+
+        //Image
+        const image = new Image();
+        image.src = "../img/01.jpg";
+
+        image.addEventListener('load',function(){
+            ctx.drawImage(image,50,200,400,300);
+            ctx.drawImage(image,350,400,100,80);
+            ctx.drawImage(image,450,200,200,100,  50,600,200,100);
+        });
+
+        //video
+        // 이슈 -> 소리X, play, pause, src
+        // 원리 -> 원본 비디오 플레이 후 장면들을 캔버스에 출력
+
+        const video = document.createElement('video');
+        video.src = '../img/puppies.mp4';
+        video.muted = 'muted';
+        video.play();
+
+        video.addEventListener('canplaythrough',videoFun);
+
+
+        function videoFun(){
+            //캔버스에 비디오 출력
+            ctx.drawImage(video,600,600,400,300);
+            requestAnimationFrame( videoFun );            
+        }
+
+        canvas.addEventListener('click',function(){
+            if( video.paused ){
+                video.play();
+            }else{
+                video.pause();
+            };
+        });
+    </script>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- dom_scroll.html -->
+    <header>
+        <nav>
+            <a href="#" class="active"> menu 01 </a>
+            <a href="#"> menu 02 </a>
+            <a href="#"> menu 03 </a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="con">
+            $('html').animate({ scrollTop:969 },1000);
+            $('.con').eq(0).offset().top
+        </div>
+        <div class="con"> content 02 </div>
+        <div class="con"> content 03 </div>
+    </main>
+    <aside>
+        <a class="active"></a>
+        <a></a>
+        <a></a>
+    </aside>
+
+
+    <style>
+        aside{position:fixed; right:3%; top:50%;}
+        aside a{
+            width:10px; height:10px;
+            border-radius: 50%;
+            display: block;
+            background-color: #ddd;
+            margin:10px 0;
+        }
+        aside a.active{ background-color: #f00; }
+
+        body {
+            margin: 0
+        }
+
+        header {
+            background-color: #000;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        header a {
+            color: #fff;
+            padding: 0 20px;
+        }
+        header a.active { color:#ff0; }
+
+        .con {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+        }
+
+        .con:nth-child(even) {
+            background-color: #eee;
+        }
+    </style>
+
+    <script>
+        /* 
+            메뉴를 클릭하면 
+            ㄴ 해당 콘텐츠가 위치하고 있는 곳까지 스크롤 이동 
+        */
+
+        //$('html').animate({  scrollTop:969   },1000);
+        // window.scrollTo(0,969);
+
+        // 메뉴클릭
+        $('nav a').on('click',pageMove);
+        $('aside a').on('click',pageMove);
+
+        function pageMove() {
+            // let idx = $('nav a').eq(1).index();
+            event.preventDefault();
+            let idx = $(this).index();
+
+            let conTop = $('.con').eq(idx).offset().top;
+            $('html').animate({ scrollTop: conTop }, 600);
+
+            update(idx);
+        }
+
+        function update(n){
+            $('aside a, nav a').removeClass('active');
+            $(`nav a:eq(${n}), aside a:eq(${n})`).addClass('active');
+
+            // $('nav a').eq(idx).addClass('active');
+            // $('aside a').eq(idx).addClass('active');
+        }
+
+        // console.log(
+        //     $('.con').length
+        // )
+        // $('aside').html('<a></a><a></a><a></a>')
+
+    </script>
+
+
+</body>
+
+</html>

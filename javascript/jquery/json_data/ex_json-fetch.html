@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script defer src="./ex-fetch.js"></script>
+</head>
+<body>
+    <!-- ex_json-fetch.html -->
+
+    <article>
+        <h2>상품 리스트</h2>
+        <div>
+            <button>저가</button>
+            <button>고가</button>
+        </div>
+        <ul>
+            <!-- <li>
+                <img src="../../img/01.jpg">
+                <div>
+                    <b>상품명</b>
+                    <p>1,000원</p>
+                </div>                
+            </li>
+            <li>
+                <img src="../../img/01.jpg">
+                <div>
+                    <b>상품명</b>
+                    <p>1,000원</p>
+                </div>                
+            </li>
+            <li>
+                <img src="../../img/01.jpg">
+                <div>
+                    <b>상품명</b>
+                    <p>1,000원</p>
+                </div>                
+            </li>
+            <li>
+                <img src="../../img/01.jpg">
+                <div>
+                    <b>상품명</b>
+                    <p>1,000원</p>
+                </div>                
+            </li> -->
+        </ul>
+        <style>
+            ul{
+                list-style-type: none; padding:0;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+            li{width:30%; margin-bottom:3%;}
+            img{width:100%}
+
+            .popup{
+                position: fixed; left:0; top:0;
+                width:100%; height:100%;
+                background-color: rgba(0,0,0,0.6);
+                display: flex; 
+                justify-content: center;
+                align-items: center;
+                display:none;
+            }
+            .popup.active{ display:flex; }
+
+            .popup .info{
+                width:60%; 
+                background-color: #fff;
+                padding:60px;
+                display: flex; 
+                justify-content: space-between;
+            }
+            .popup .info div{width:46%;}
+        </style>
+    </article>
+
+    <div class="popup">
+        <div class="info">
+            <!-- <div><img src="../../img/01.jpg"></div>
+            <div>
+                <p>상품명</p>
+                <p>가격</p>
+                <p>상품1에 대한 상세설명......</p>
+            </div> -->
+        </div>
+    </div>
+
+
+
+
+
+</body>
+</html>

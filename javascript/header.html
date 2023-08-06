@@ -1,0 +1,20 @@
+
+<!-- 
+<iframe 
+src="http://mkyu.dothome.co.kr/bbs/board.php?bo_table=free" 
+width="800" height="1000" frameborder="no" scrolling="no">
+</iframe> -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+$.ajax({
+            url: "https://www.aladin.co.kr/ttb/api/ItemSearch.aspx?ttbkey=ttbgggdbstjs1055002&Query=%EB%AF%BC%EC%9D%8C%EC%82%AC&QueryType=Publisher&MaxResults=10&start=1&SearchTarget=Book&output=js&Version=20131101",
+            jsonp: 'bookDisplay',
+            dataType: "jsonp",
+            success:function(data){
+                console.log(data)
+            }
+        })
+</script>

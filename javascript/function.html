@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- function.html -->
+    <script>
+        // 함수선언식(호이스팅O), 표현식(호이스팅X)
+        /* 
+            # 함수선언식
+            function 함수이름(){   }
+            실행 => 함수이름()
+
+            # 함수표현식
+            let 함수이름 = function(){    }
+            실행 => 함수이름()
+        */
+
+        function fun(...전달받은값){
+            // return은 값을 반환시키고 실행중인 함수를 종료함
+            return 전달받은값;
+        }
+        console.log(   fun(   100,200,250,300,400  )   );
+    </script>
+
+    <article class="ex1">
+        <h2>함수 - 증감값 활용</h2>
+        <div>
+            <button>증감</button>
+            <button>감소</button>
+            <code>0</code>
+        </div>
+
+        <script>
+            const elBtn = document.querySelectorAll('.ex1 button');
+            const elCode = document.querySelector('.ex1 code');
+            
+            let num = 0;
+
+            function good(param){   
+                if(param == '증가'){
+                    if(num < 5) num++;   
+                }else{
+                    if(num > 0) num--;
+                }
+                elCode.textContent = num;
+            }
+            
+            elBtn[0].addEventListener('click',function(){
+                good('증가');                
+            })
+
+            elBtn[1].addEventListener('click',function(){
+                good('감소'); 
+            })
+        </script>
+
+    </article>
+
+    <article class="ex2">
+        <h2> 자판기 예제</h2>
+
+        <div class="total"> <code>1000</code>원 </div>
+        <div class="choice"> 
+            <button>밀크커피(300)</button>
+            <button>고급밀크커피(400)</button>
+            <button>아메리카노(600)</button>
+        </div>
+        <div class="guide">
+            아래 동전버튼을 눌러 원하는 커피를 2개 고르시오.
+            조건) 총금액 - 1000원
+
+            <!-- <button>거스름돈 반환</button> -->
+        </div>
+        <style>
+            .ex2{ 
+                width:400px; 
+                margin:200px auto; 
+                border:1px solid #ddd;
+                padding:40px;
+            }
+            .ex2 .total{
+                background:#000; color:#fff;
+                text-align: center;
+                padding:10px 0;
+            }
+            .ex2 .total > code{color:#ff0; font-size:2rem;}
+            .ex2 .choice{
+                background: #ddd; padding:20px 0;
+                text-align: center;
+            }
+            .ex2 .guide{padding:20px 0 0; white-space: pre-line;}
+        </style>
+
+        <script>
+            const coffeeBtn = document.querySelectorAll('.choice button');
+            const total = document.querySelector('.total code');
+            let totalPrice = 1000;
+            // alert('금액이 부족합니다!!')
+            function changeFun(coin){
+                if(totalPrice >= coin) {
+                    totalPrice = totalPrice - coin;
+                }else{
+                    alert('금액이 부족합니다!!');
+                }
+                total.textContent = totalPrice;
+            }
+
+            coffeeBtn[0].addEventListener('click',function(){
+                changeFun(300);
+            })
+
+            coffeeBtn[1].addEventListener('click',function(){
+                changeFun(400);
+            })
+
+            coffeeBtn[2].addEventListener('click',function(){
+                changeFun(600);
+            })
+
+
+
+
+
+        </script>
+
+
+
+
+    </article>
+
+
+
+</body>
+</html>

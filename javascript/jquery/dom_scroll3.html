@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="height:5000px">
+    <!-- dom_scroll3.html -->    
+    <article>
+        <h2> scrollTo(절대), scrollBy(상대), scrollintoView </h2>
+        <div> <button>섹션 2</button> </div>
+        <div> <button>섹션 3</button> </div>
+        <div> <button>섹션 1</button> </div>
+    </article>
+    <style>
+        /* html{ scroll-behavior: smooth; } */
+        div{
+            width:100%; height:100vh;
+            display: flex; justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+
+
+    <script>
+        let scrollY;
+        window.addEventListener('scroll',function(){
+            scrollY = window.scrollY;
+            // window.scrollBy(0,10);
+            // window.scrollTo(0,1000);
+        });
+
+        const btns = document.querySelectorAll('button');
+        const elDivs = document.querySelectorAll('div');
+
+        btns[0].onclick = function(){
+            elDivs[1].scrollIntoView({behavior:'smooth'});
+        }
+        btns[1].onclick = function(){
+            elDivs[2].scrollIntoView({behavior:'smooth'});
+        }
+        btns[2].onclick = function(){
+            elDivs[0].scrollIntoView({behavior:'smooth'});
+        }
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>

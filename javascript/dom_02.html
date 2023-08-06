@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- dom_02.html -->
+    <article>
+        <h2>오브젝트 위치 및 크기</h2>
+        <div>
+            <figure><img src="./img/01.jpg"></figure>
+            <figure><img src="./img/02.jpg"></figure>
+            <figure><img src="./img/03.jpg"></figure>
+        </div>
+        <style>
+            article{width:30%; margin:100px auto;}
+            article div{position:relative}
+            article figure{margin:100px 0;}
+            article figure img{width:100%}
+        </style>
+    </article>
+
+
+    <script>
+        function init(){
+            // offsetHeight, offsetWidth, offsetTop, offsetLeft
+            const elFigure = document.querySelectorAll('figure');
+            let offset = [];
+            let clientRect = [];
+
+            elFigure.forEach(function(el){
+
+                clientRect.push( el.getBoundingClientRect() );
+
+                offset.push(
+                    {
+                        w:el.offsetWidth, 
+                        h:el.offsetHeight,
+                        x:el.offsetLeft,
+                        y:el.offsetTop
+                    }
+                );
+            });
+
+        }
+
+        window.addEventListener('load',init);
+
+
+    </script>
+
+
+
+
+
+</body>
+</html>

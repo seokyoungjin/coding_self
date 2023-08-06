@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- animation.html -->
+
+    <canvas width="1000" height="1000"></canvas>
+
+    <script>
+        const canvas = document.querySelector('canvas');
+        const ctx = canvas.getContext('2d');
+
+        let size = {w:canvas.width, h:canvas.height};
+        let circle = {x:100,y:500,dx:10,dy:10,r:50,c:'#f00'}
+
+        function ran(){
+           return  Math.floor(Math.random() * 256);
+        }
+
+        function drawFn(){
+
+            circle.x += circle.dx;
+            circle.y += circle.dy;
+
+            if(  size.w-circle.r < circle.x  || circle.x < circle.r ){
+                circle.dx *= -1;
+                circle.c = `rgb(${ran()},${ran()},${ran()})`
+            }
+            if(  size.h-circle.r < circle.y  || circle.y < circle.r ){
+                circle.dy *= -1;
+            }     
+
+            ctx.clearRect(0,0,size.w,size.h);
+            ctx.beginPath();
+            ctx.fillStyle = circle.c;
+            ctx.arc(circle.x,circle.y,circle.r,0,Math.PI*2);
+            ctx.fill();
+
+            requestAnimationFrame(drawFn);
+        }
+        drawFn();
+
+
+
+    </script>
+
+
+
+
+    
+</body>
+</html>

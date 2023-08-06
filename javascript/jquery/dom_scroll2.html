@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <!-- dom_scroll2.html -->
+    <article>
+        <h2>scroll event</h2>
+        <div>
+            <figure><img src="../img/01.jpg"></figure>
+            <figure><img src="../img/02.jpg"></figure>
+            <figure><img src="../img/03.jpg"></figure>
+            <figure><img src="../img/04.jpg"></figure>
+            <figure><img src="../img/05.jpg"></figure>
+        </div>
+    </article>
+    
+    <style>
+        *{box-sizing: border-box;}
+        article{width:60%; margin:100px auto;}
+        article figure{
+            margin:200px 0;
+            opacity:0;
+            transition: 1s;
+            transform: translateY(50%);
+        }
+        article figure.active{
+            opacity:1;
+            transform: translateY(0%);
+        }
+
+        article figure img{vertical-align: middle;}
+    </style>
+
+<script>
+    function init(){
+        //start
+        let posY;
+        let winH = $(window).height();
+        let scrollTop;
+
+        $(window).on('scroll',function(){  
+            scrollTop = $(window).scrollTop();
+
+            $('figure').each(function(i){
+                posY = $('figure').eq(i).offset().top;
+
+                if(posY - winH  < scrollTop){
+                    $('figure').eq(i).addClass('active');
+                }
+            });
+
+        });
+
+        //end
+    }
+    $(window).on('load',init);
+
+
+
+
+
+
+
+    console.log(
+        // $(window).scrollTop()
+        // $(document).height()
+        // winH
+    );
+        // 4044 (스크롤높이)
+        // 4996 (문서높이) 
+        // 952  (브라우저높이)
+
+        // 문서높이 - 브라우저높이 = 스크롤높이
+
+
+    
+
+</script>
+
+    
+</body>
+</html>
+

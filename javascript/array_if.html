@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- array_if.html -->
+    <style>.exam{white-space: pre-line; line-height: 3;}</style>
+    <div class="exam">
+        첫번째값 => <code class="elValue1"> </code>
+        두번째값 => <code class="elValue2"> </code>
+        세번째값 => <code class="elValue3"> </code>
+        네번째값 => <code class="elValue4"> </code>
+        다섯째값 => <code class="elValue5"> </code>
+
+        총점 => <code class="elTotal"> </code>
+        평균 => <code class="elAvg"> </code>
+        등급 => <code class="elGrade"> </code>
+        합격여부 => <code class="elVerdict"> </code>
+    </div>
+
+    <script>
+        const elValue1 = document.querySelector('.elValue1'),
+            elValue2 = document.querySelector('.elValue2'),
+            elValue3 = document.querySelector('.elValue3'),
+            elValue4 = document.querySelector('.elValue4'),
+            elValue5 = document.querySelector('.elValue5'),
+            elTotal = document.querySelector('.elTotal'),
+            elAvg = document.querySelector('.elAvg'),
+            elGrade = document.querySelector('.elGrade'),
+            elVerdict = document.querySelector('.elVerdict');
+
+
+
+        // let arrNum = new Array();
+        // 선언과 동시에 값지정
+        let arrNum = [10,20,30,40,50];
+
+        // 개별값 적용
+        arrNum[0] = 10;
+        arrNum[1] = 20;
+        arrNum[2] = 30;
+        arrNum[3] = 40;
+        arrNum[4] = 50;
+
+        let total = arrNum[0]+arrNum[1]+arrNum[2]+arrNum[3]+arrNum[4];
+        let avg = total / arrNum.length;
+        let grade,verdict;
+
+        // 합격여부
+        if(avg >= 30){
+            verdict = '합격';
+        }else{
+            verdict = '불합격';
+        }
+        
+        // 등급
+        if(avg >= 40){ 
+            grade = 'A등급'; 
+        }
+        else if(avg >= 30 && avg < 40){ 
+            grade = 'B등급'; 
+        }
+        else if(avg >= 20 && avg < 30){ 
+            grade = 'C등급'; 
+        }
+        else { 
+            grade = 'D등급'; 
+        }
+
+        //화면출력
+        elValue1.textContent = arrNum[0];
+        elValue2.textContent = arrNum[1];
+        elValue3.textContent = arrNum[2];
+        elValue4.textContent = arrNum[3];
+        elValue5.textContent = arrNum[4];
+
+        elTotal.textContent = total;
+        elAvg.textContent = avg;
+        elGrade.textContent = grade;
+        elVerdict.textContent = verdict;
+
+    </script>
+
+</body>
+</html>
+
+
