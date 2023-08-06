@@ -1,0 +1,91 @@
+.center{
+    text-align:center;
+}
+
+h2{font-size:50px;}
+
+
+.box-1{
+    width:600px;
+    margin:100px auto;
+}
+.box-1 > div{
+    border:1px solid #000;
+    padding:40px;
+}
+.box-1 > div > p{
+    margin:5px;
+    background-color: yellow;
+}
+
+.box-1 > div > p:nth-of-type(2){ color:#f00;  }
+.box-1 > div > p:nth-of-type(odd){ 
+    background-color: aquamarine;
+}
+.box-1 > div > p:first-of-type{ color:rgb(8, 121, 27); }
+.box-1 > div > p:last-of-type{ color:#00f; }
+
+/* 
+    nth-of-type 
+    형제 태그들 중 n번째에 해당하는 태그요소를 선택자로 지정
+
+    [값]
+    홀수(odd)  / 짝수(even)
+    n번째에 해당하는 숫자 
+
+    ex)
+      :nth-of-type(2){}
+      :nth-of-type(2n){} 형제태그들 순은 0부터 시작 X 2
+*/
+
+
+.box-2{
+    width:600px; 
+    margin:100px auto;
+}
+.box-2 > ul{}
+.box-2 > ul > li{
+    border-top:1px dashed #000;
+    padding:10px 0;
+}
+.box-2 > ul > li:nth-of-type(1){
+    font-size:16px;
+}
+.box-2 > ul > li:nth-of-type(2){
+    color:#555;
+}
+.box-2 > ul > li:nth-of-type(3){
+    line-height:2;
+}
+.box-2 > ul > li:nth-of-type(4){
+    letter-spacing: 20px;
+}
+.box-2 > ul > li:nth-of-type(5){
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.box-2 > ul > li:nth-of-type(6){
+    text-decoration: overline;
+    /* underline, line-through, overline, none */
+}
+.box-2 > ul > li:nth-of-type(7){
+    text-transform: capitalize;
+    /* 
+        대문자(uppercase), 소문자(lowercase), 
+        첫문자만 대문자(capitalize) 
+    */
+}
+
+/* 모바일 */
+@media (max-width:767px) {
+    
+}
+
+/* ipad */
+@media (min-width:768px) and (max-width:1023px){
+    
+}
+
+/* desktop */
+@media (min-width:1024px) and (max-width:1400px){
+    
+}

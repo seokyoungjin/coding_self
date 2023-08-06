@@ -1,0 +1,27 @@
+
+div{
+    width:1400px;
+    height:400px;
+    
+    margin:100px auto 100px auto; 
+    /* 상(12), 우(3), 하(6), 좌(9) */
+
+    margin:50px 500px 50px; 
+    /* 상(50), 좌/우(500), 하(50) */
+
+    margin:200px auto; 
+    /* 상/하(200), 좌/우(auto) */
+
+    margin:100px;
+    /* 상/하/좌/우  */
+
+    margin-top:100px;
+    margin-right:auto;
+    margin-bottom:100px;
+    margin-left:auto;
+
+    padding:40px;
+    /* margin표기법은 동일하나 auto값 사용 안됨 */
+
+    border:1px solid #000;
+}

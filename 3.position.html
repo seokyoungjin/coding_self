@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="3.position.css" rel="stylesheet">
+</head>
+<body>
+<!-- 
+    3.position.html
+    3.position.css
+ -->
+
+<!-- 
+    fixed(고정), 
+    absolute(절대), 
+    relative(상대), 
+    sticky(상대,고정), 
+    static -->
+ 
+<article>
+    <h2>Fixed(고정좌표)</h2>
+    <p> ex)        
+        position:fixed; 
+        좌표설정 : left, right, top, bottom
+    </p>
+    <ul>
+        <li> 가로, 세로 좌표를 기준으로 콘텐츠 위치 시킴</li>
+        <li> 태그의 속성에 상관없이 지정할수 있음 </li>
+        <li> 가로 사이즈가 콘텐츠의 크기만큼 설정됨</li>
+    </ul>
+    <div class="fixed"> 사이드 배너 </div>
+</article>
+
+<article>
+    <h2>Absolute(절대좌표)</h2>
+    <p> ex)        
+        position:absolute; 
+        좌표설정 : left, right, top, bottom
+    </p>
+    <ul>
+        <li>fixed와 유사하나 스크롤에 영향을 받음</li>
+        <li>
+            공지사항 또는 이벤트 팝업과 같은 레이어팝업에 사용됨
+        </li>
+        <li>
+            절대좌표 단독으로 사용할수도 있으나 보통 상대좌표와 함께 사용됨
+        </li>
+    </ul>
+    <div class="absolute"> 오늘하루동안보지않기 X </div>
+</article>
+
+
+<article>
+    <h2>Relative(상대좌표)</h2>
+    <p> ex)        
+        position:relative; 
+        좌표설정 : left, right, top, bottom
+    </p>
+    <ul>
+        <li>
+            상대좌표는 fixed,absolute와 달리 
+            태그의 속성이 그대로 유지됨
+        </li>
+        <li> 
+            브라우저 기준이 아닌 자신 스스로가 상대좌표값을 갖고 위치시킬수 있음
+        </li>
+        <li> 
+            부모(상대좌표) 자식(절대좌표) 유형의 콘텐츠가 많이 사용됨 (부모를 기준으로 자식을 위치시킬수 있음)
+        </li>
+    </ul>
+
+    <div class="relative">
+        <p><img src="img/05.jpg" alt=""></p>
+        <div> 이미지 설명 및 제목 </div>
+    </div>
+
+
+
+
+</article>
+
+
+<article>
+    <h2>Sticky(상대,고정좌표)</h2>
+    <p> ex)        
+        position:sticky; 
+        좌표설정 : left, right, top, bottom
+    </p>
+    <ul>
+        <li> 설정된 좌표 영역에서 고정(fixed) 됨 </li>
+        <li> 부모영역이 스크롤 밖으로 나가게되면 고정값 해제 </li>
+    </ul>
+    
+    <div class="sticky">
+        <p>부모가 상단으로 나가면 자식(sticky)도 함께 이동함</p>
+    </div>
+
+</article>
+
+
+
+
+</body>
+</html>

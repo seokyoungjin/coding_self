@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+$defualt : 20px;
+$pageWidth : 1400px;
+
+@mixin flex($a, $b, $c, $d) {
+    display:flex;
+    justify-content: $a;
+    align-items: $b;
+    flex-wrap: $c;
+    flex-direction: $d;
+}
+
+// _common.scss
+html,body{ 
+    margin:0; font-size:$defualt; 
+}
+*{box-sizing: border-box;}
+a{color:#000; text-decoration: none;}

@@ -1,0 +1,84 @@
+
+.float{
+    width:1000px;
+    margin:100px auto;
+}
+.float h2{
+    font-size:3em; text-align: center;
+}
+.float h2::after{
+    content: '';
+    width:100px; 
+    display:block; 
+    margin:30px auto;
+    border-bottom:3px solid #000;
+}
+
+.float > div{
+    /* 부모 */
+    border:5px solid #f00;
+}
+.float > div::after{
+    /* 필수속성 content */
+    content:'';
+    clear:both;
+    display:block;
+}
+.float > div > div{
+    /* 자식 */
+    width:45%;
+    height:200px;
+    background-color: #ddd;
+    margin:10px 0;
+}
+.float > div > div:nth-child(1){
+    float:left;
+}
+.float > div > div:nth-child(2){
+    float:right;
+}
+
+/* ex-flex-1 */
+.ex-flex-1{
+    width:80%; margin:100px auto;
+    display:flex;
+    justify-content: space-between;
+}
+.ex-flex-1 > div > a{
+    padding:0 1vw;
+}
+
+/* ex-flex-2 */
+.ex-flex-2{
+    width:80%; margin:100px auto;
+    display: flex;
+    justify-content: space-between;
+    border:1px solid #f00;
+    height:4200px;
+}
+.ex-flex-2 > div{
+    width:40%; height:500px;
+    background-color: aquamarine;
+    position:sticky; left:0; top:100px;
+}
+.ex-flex-2 > ul{
+    width:50%; 
+    border:1px solid #f00;
+}
+.ex-flex-2 > ul > li{
+    height:300px;
+    background-color: #eee;
+    margin:50px 0;
+    position:sticky; left:0; 
+    border:1px solid #000;
+}
+.ex-flex-2 > ul > li:nth-child(1){top:100px;}
+.ex-flex-2 > ul > li:nth-child(2){top:150px;}
+.ex-flex-2 > ul > li:nth-child(3){top:200px;}
+.ex-flex-2 > ul > li:nth-child(4){top:250px;}
+.ex-flex-2 > ul > li:nth-child(5){top:300px;}
+.ex-flex-2 > ul > li:nth-child(6){top:350px;}
+.ex-flex-2 > ul > li:nth-child(7){top:400px;}
+.ex-flex-2 > ul > li:nth-child(8){top:450px;}
+.ex-flex-2 > ul > li:nth-child(9){top:500px;}
+.ex-flex-2 > ul > li:nth-child(10){top:550px;}

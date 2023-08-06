@@ -1,0 +1,54 @@
+@import url('./common.css');
+
+.visual{
+    width:1060px;
+    margin:0 auto;
+    position: relative;
+}
+.visual > img{width:100%;}
+.visual > figcaption{
+    position:absolute;
+    left:80px; bottom:30px;
+    background-color: #fff;
+    padding:10px 30px;
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+
+.diary{
+    width:1060px;
+    margin:0 auto;
+    padding:100px 70px;
+}
+
+.life{
+    width:1060px;
+    margin:0 auto;
+    padding:0px 70px 60px 70px;
+}
+.life > ul{ display:flex; justify-content: space-between; flex-wrap: wrap;}
+.life > ul > li{width:47%;}
+.life > ul > li figure{margin-bottom:30px;}
+.life > ul > li img{width:100%;}
+
+.email{
+    background-color: #f0f0f0;
+    padding:100px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.email h3{font-size:30px;}
+.email > p{border-bottom:2px solid #000; padding:70px 0 10px;}
+.email > p > input{
+    border:none; width:400px; 
+    background-color: transparent;
+}
+.email > p > a{
+    background:url('../img/btn_newsletter.png') no-repeat;
+    width:32px; height:17px;
+    display:inline-block;
+    font-size:0;    
+}
+.email > p > input,
+.email > p > a{vertical-align: middle;}

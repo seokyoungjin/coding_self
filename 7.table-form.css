@@ -1,0 +1,43 @@
+.t-1 {
+    width: 1000px;
+    margin: 100px auto;
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+.t-1 caption {
+    font-size: 3rem;
+    text-align: left;
+}
+
+.t-1 th,
+.t-1 td {
+    border: 1px solid #000;
+    padding: 40px;
+    font-size: 2rem;
+}
+
+.board {
+    width: 1000px;
+    margin: 100px auto;
+    border-collapse: collapse;
+}
+
+.board caption {
+    font-size: 2rem;
+    border-bottom: 1px solid #000;
+    padding:30px 0;
+}
+.board thead {background-color: #eee;}
+
+.board th,
+.board td {
+    padding: 20px;
+    border-bottom: 1px solid #000;
+    text-align: center;
+}
+.board td:nth-of-type(2) {text-align: left;}
+.board tbody tr:nth-of-type(even){
+    background: #f3f3f3;
+}
+

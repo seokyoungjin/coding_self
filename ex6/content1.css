@@ -1,0 +1,50 @@
+ul,li{list-style-type: none; padding:0; margin:0;}
+figure,p{margin:0;}
+*{box-sizing: border-box;}
+
+
+.list{
+    width:1280px;
+    margin:100px auto;
+}
+.list > ul{}
+.list > ul > li{
+    display:flex;
+    justify-content: space-between;
+}
+.list > ul > li > figure{width:50%;}
+.list > ul > li > figure > img{width:100%}
+
+.list > ul > li > div{
+    width:45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.list > ul > li > div > span{
+    width:100%;
+    position:relative;
+}
+.list > ul > li > div > span > b{
+    background-color: #fff;
+    padding-right:20px;
+    font-size:42px
+}
+.list > ul > li > div > span::after{
+    content:'';
+    border-bottom:2px solid #000;
+    width:100%;
+    position:absolute;
+    left:0; top:50%;
+    z-index: -1;
+}
+
+
+
+.list > ul > li > div > p{}
+.list > ul > li > div > a{}
+
+
+.list > ul > li:nth-child(2) > figure{ order:2;}
+.list > ul > li:nth-child(2) > div{ order:1; }

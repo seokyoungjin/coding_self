@@ -1,0 +1,78 @@
+
+/* 3.position.css */
+
+h2{font-size:48px;}
+ul,li{
+    padding:0; margin:0;
+    list-style-type: none;
+}
+li{
+    padding:10px 0;
+    border-bottom:1px solid #ddd;
+}
+
+article{
+    width:60%; margin:100px auto;
+}
+article > p{
+    background-color: #ddd;
+    padding:40px;
+    white-space: pre-line;
+    line-height: 2;
+    font-size: 1.6rem;
+    /* rem - 최상위 태그의 폰트사이즈에 x 1.6 
+        em - 상위 태그의 폰트사이즈 x 1.6
+    */
+}
+
+
+body{height:6000px;}
+
+.fixed{
+    background-color: yellow;
+    padding:40px;
+    position:fixed;
+    right:10%; top:10%;
+    z-index: 9999;
+}
+
+
+.absolute{
+    width:300px;
+    padding:40px;
+    background-color: #000;
+    color:#fff;
+    position:absolute;
+    left:calc(50% - 150px); bottom:6%;
+}
+
+.relative{ 
+    position:relative; 
+    overflow:hidden;
+}
+.relative > p{margin:0;}
+.relative > p > img{width:100%; vertical-align: middle;}
+.relative > div{
+    position: absolute;
+    left:0; bottom:-10%;
+    background-color: rgba(255,0,0,0.4);
+    padding:15px 0;
+    width:100%;
+    text-align: center;
+    transition:.5s;    
+}
+.relative:hover > div{
+    bottom:0%;
+}
+
+.sticky{height:1000px; border:1px solid #000;}
+.sticky > p{
+    position:sticky;
+    top:0;
+    background-color: #f00;
+}
+
+
+
+
+

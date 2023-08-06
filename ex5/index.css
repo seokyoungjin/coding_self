@@ -1,0 +1,67 @@
+html,body{margin:0;}
+h1,h2,p,figure{margin:0;}
+img{vertical-align: middle;}
+a{text-decoration: none; color:#333;}
+*{box-sizing: border-box;}
+/* header */
+header{
+    padding:40px 0;
+}
+header > div{
+    width:1200px;
+    margin:0 auto;
+    display:flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+header > div > h1{}
+header > div > h1 > a{}
+header > div > nav{}
+header > div > nav > a{
+    display:inline-block;
+    padding:0 20px;
+}
+header > div > nav > a::after{
+    content:'';
+    border-bottom:3px solid #000;
+    display:block;
+    margin:0 auto;
+    width:0;
+    transition:.5s;
+}
+header > div > nav > a:hover::after{
+    width:100%;
+}
+
+/* main */
+main{position:relative}
+main > img{width:100%;}
+main > article{
+    position:absolute;    left:50%; bottom:0%;
+    transform: translate(-50%, 0%);
+    background-color: #fff; padding:60px;
+    transition: 0.5s;
+}
+main > article > h2{padding-bottom:20px;}
+main > article > figure{}
+main > article > figure > p{}
+main > article > figure > p > img{}
+main > article > figure > figcaption{text-align: center;}
+main > article > figure > figcaption > p{padding:20px 0;}
+main > article > figure > figcaption > a{
+    background-color: #000;
+    color:#fff;
+    padding:10px 30px;
+    display: inline-block;
+
+}
+main:hover > article {
+    transform: translate(-50%, -10%);
+    
+}
+
+footer{}
+
+
+
+

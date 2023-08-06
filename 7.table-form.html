@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./7.table-form.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 7.table-form.html / 7.table-form.css -->
+    <table class="t-1">
+        <caption>테이블명</caption>
+        <thead>
+            <tr>
+                <th>제목</th>
+                <th>제목</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>th태그는 제목을 기입하고 td는 내용을 기입함</td>
+                <td>
+                    thead,tbody,tfoot으로 영역을 구분해서 사용함<br>
+                    tr은 한줄씩 그룹하는 용도로 사용함<br>
+                    th,td는 가로로 나열됨<br>
+                    가로병합(colspan), 세로병합(rowspan)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="t-1">
+        <tr>
+            <td colspan="3"> 01,02,03 </td>
+        </tr>
+        <tr>
+            <td rowspan="2">04,07</td><td>05</td><td>06</td>
+        </tr>
+        <tr>
+            <td colspan="2">08,09</td>
+        </tr>
+    </table>
+
+    <table class="board">
+        <colgroup>
+            <col width="100">
+            <col width="">
+            <col width="160">
+        </colgroup>
+        
+        <caption>게시판</caption>
+        <thead>
+            <tr><th>번호</th><th>제목</th><th>날짜</th></tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>01</td>
+                <td>공지사항입니다..</td>
+                <td>2022-05-13</td>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>공지사항입니다..</td>
+                <td>2022-05-13</td>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>공지사항입니다..</td>
+                <td>2022-05-13</td>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>공지사항입니다..</td>
+                <td>2022-05-13</td>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>공지사항입니다..</td>
+                <td>2022-05-13</td>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>공지사항입니다..</td>
+                <td>2022-05-13</td>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>공지사항입니다..</td>
+                <td>2022-05-13</td>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>공지사항입니다..</td>
+                <td>2022-05-13</td>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>공지사항입니다..</td>
+                <td>2022-05-13</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3"> 페이지(1,2,3....) </td>
+            </tr>
+        </tfoot>
+    </table>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+// _media.scss
+$mobile : 360px;
+$tablet : 768px;
+$desktop : 1024px;
+$lgdesktop : 3600px;
+
+@mixin breakpoint($min, $max){
+    @media (min-width:$min) and (max-width:$max) {
+        @content;
+    }
+}
+
+@include breakpoint($mobile, $tablet){
+    body{ background-color: #f00;} 
+};
+
+@include breakpoint($tablet, $desktop){
+    body{ background-color: rgb(31, 27, 244); } 
+};
+
+@include breakpoint($desktop, $lgdesktop){
+    body{ background-color: rgb(9, 255, 0); } 
+};

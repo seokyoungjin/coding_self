@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--     
+    html > svg
+    ㄴ svg.html 
+-->
+<svg width="1000" height="600">
+    <circle 
+        cx="100" 
+        cy="100" 
+        r="50" 
+        fill="red"
+        stroke="black"
+        stroke-width="5"></circle>
+
+    <line x1="200" y1="100" x2="300" y2="100" stroke="red"></line>
+    <rect x="50" y="200" rx="15" width="100" height="100"></rect>
+
+    <text x="400" y="100">SVG ANIMATION</text>
+    <image href="../img/01.jpg" x="300" y="200" width="200">
+</svg>
+
+
+
+
+<style>
+    svg{border:1px solid red;}
+    text{ font-size: 50px; fill:red;}
+    .st0{
+        fill : transparent; 
+        stroke: #000;
+        stroke-width:5px;
+        animation: ic1 2s forwards;
+        stroke-dasharray: 200px;
+        stroke-dashoffset: 200px;
+
+    }
+    .st1{
+        fill:#000; stroke:transparent;
+        animation: ic2 .5s .5s forwards;
+        opacity: 0;
+        transform: translate(16%,0%) scale(0.3);
+        
+        
+    }
+    .st2{}
+    .st3{}
+    .st4{}
+
+    @keyframes ic1 {
+        100%{stroke-dashoffset: 0px;}
+    }
+    @keyframes ic2 {
+        100%{
+            transform:scale(1) translate(0%,0%); opacity: 1;
+        }
+    }
+
+
+
+
+
+    circle{
+        fill:transparent;
+        stroke: #f00;
+        stroke-width:3px;
+        stroke-dasharray: 400px;
+        stroke-dashoffset: 400px;
+        animation: circle 6s forwards;
+    }
+    @keyframes circle {
+        100%{
+            stroke-dashoffset: 0px;
+        }
+    }
+
+
+    path{
+        fill:transparent;
+        stroke: #f00;
+        stroke-width:1px;
+        stroke-dasharray: 1000px;
+        stroke-dashoffset: 1000px;
+        animation: sign 3s forwards;
+    }
+    @keyframes sign {
+        100%{
+            stroke-dashoffset: 0px;
+        }
+    }
+
+</style>
+
+
+
+
+
+</body>
+</html>

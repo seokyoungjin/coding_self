@@ -1,0 +1,61 @@
+ul{
+    /* list-style-image: url('./img/01.jpg'); */
+    list-style-position: inside;
+    padding:0 5%;
+}
+li{padding:10px 0; border-top:1px solid #ddd;}
+label{
+    display: inline-block;
+    width:100px;
+}
+
+
+.ex{}
+.ex input{}
+.ex input::placeholder{ font-size:24px; }
+
+.ex input:checked + label{
+    background-color: rgb(255, 110, 110);
+}
+
+.ex label{
+    display: block;
+    width:100px; height:40px;
+    background-color: #ddd;
+    border-radius: 50px;
+}
+.ex label span{
+    width:40px; height:40px;
+    border-radius: 100%;
+    background-color: #fff;
+    display: block;
+    transform: scale(0.9);
+    transition: 0.3s;
+}
+.ex input:checked + label span{
+    transform: scale(0.9) translateX(66px);
+}
+
+/* ex2 */
+.ex2{
+    width:1000px; margin:100px auto;
+}
+.ex2 input{display:none;}
+
+.ex2 .content{position: relative;}
+.ex2 .content > div{
+    background:#eee;
+    text-align: center;
+    padding:20%;
+    box-sizing: border-box;
+    position: absolute;
+    width:100%;
+    display: none;
+}
+
+.ex2 input:nth-child(1):checked ~ .content > div:nth-child(1){
+    display:block;
+}
+.ex2 input:nth-child(2):checked ~ .content > div:nth-child(2){
+    display:block;
+}

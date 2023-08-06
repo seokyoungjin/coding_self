@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./flex.css" rel="stylesheet">
+</head>
+<body>
+<!-- 
+    4.flex.html
+    4.flex.css 
+-->
+    <article>
+        <h2>flex</h2>
+        <p> ※ flex 기본값
+
+            flex-direction:row; (가로방향)
+            flex-wrap:nowrap;   (가로 한줄)
+            align-content:flex-start; (상단정렬 - 세로 2줄 이상일때)
+            justify-content:flex-start; (좌측 정렬)
+            align-items:stretch; (아이템 세로크기 동일)
+
+            ex)
+            display:flex; 
+            justify-content: space-between;
+        </p>
+
+        <ul class="flex-1">
+            <li><img src="./img/01.jpg" alt=""></li>
+            <li><img src="./img/02.jpg" alt=""></li>
+            <li><img src="./img/03.jpg" alt=""></li>
+        </ul>
+
+        <p class="mt200"> ex) 
+            display:flex; 
+            flex-wrap: wrap;
+            justify-content: space-between;
+        </p>
+        <ul class="flex-2">
+            <li><img src="./img/01.jpg" alt=""></li>
+            <li><img src="./img/02.jpg" alt=""></li>
+            <li><img src="./img/03.jpg" alt=""></li>
+            <li><img src="./img/04.jpg" alt=""></li>
+            <li><img src="./img/05.jpg" alt=""></li>
+            <li><img src="./img/06.jpg" alt=""></li>
+        </ul>
+
+
+        <p class="mt200"> ex) 2줄(가로,세로 정렬)
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content: space-between;
+            height:400px;
+        </p>
+        <ul class="flex-3">
+            <li>01</li>
+            <li>02</li>
+            <li>03</li>
+            <li>04</li>
+            <li>05</li>
+            <li>06</li>
+            <li>07</li>
+            <li>08</li>
+            <li>09</li>
+        </ul>
+
+        <p class="mt200">
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        </p>
+        <ul class="flex-4">
+            <li>
+                아이템을 중앙 정렬하는 방법
+            </li>
+        </ul>
+
+    </article>
+
+
+
+
+
+
+
+</body>
+</html>

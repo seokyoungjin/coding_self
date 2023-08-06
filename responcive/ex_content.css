@@ -1,0 +1,41 @@
+/* ex_content.css */
+
+.content{
+    width:1400px; margin:100px auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.content > figure{width:48%; margin:0;}
+.content > figure > img{width:100%;}
+
+
+/* 
+    ===============================================================
+    ============================mobile=============================
+    =============================================================== 
+*/
+@media (max-width:768px){        
+    .content{
+        width:100%; 
+        flex-direction: column;
+    }
+    .content > figure{width:100%; margin:0;}
+    .content > figure > img{width:100%;}
+}
+
+@media print{
+    /* header, footer{display:none}
+    *{display:none;}
+    .map{display: block;} */
+
+    .content figure:nth-child(2),
+    .content figure:nth-child(4){display: none;}
+}
+
+/* 
+#분기점
+    모바일 (320 ~ 767)
+    타블랫 (768 ~ 1024)
+    데스크탑 (1025  ~   최적화 사이즈 => ex) 1400 
+*/

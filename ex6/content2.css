@@ -1,0 +1,43 @@
+body,h1,figure,p{margin:0;}
+*{box-sizing: border-box; color:#fff}
+
+header{
+    position:fixed;
+    left:10%; top:0;
+    width:80%;
+    z-index:2 ;
+
+    display:flex; justify-content: space-between;
+}
+header .trigger-menu{
+    display:block;
+    width:30px;
+}
+header .trigger-menu > span{
+    display: block;
+    border-bottom:2px solid #fff;
+    margin:3px 0;
+}
+
+header h1{}
+header > div{}
+
+.visual{
+    position:relative;
+    
+}
+.visual > img{}
+
+.visual .txt{
+    position:absolute; left:50%; top:50%;
+    transform: translate(-50%,-50%);
+}
+.visual .txt > strong{}
+.visual .txt > a{}
+
+.visual .scroll{
+    background:url('./img/ic_mouse.png') no-repeat;
+    width:80px; height:80px;
+    position:absolute; left:50%; bottom:10%;
+}
+

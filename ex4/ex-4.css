@@ -1,0 +1,59 @@
+
+body{margin:0;}
+p,figure,h2{ margin:0; }
+ul,li{list-style-type:none; margin:0; padding:0;}
+*{
+    box-sizing:border-box;
+}
+
+.n-e{
+    width:100%; 
+    padding:100px 180px;
+    text-align: center;
+}
+
+.n-e > h2{
+    font-size:54px; color:#222;
+}
+.n-e > p{ color:#555;}
+
+.n-e .content{
+    padding:60px;
+    background-color: #eee;
+}
+.n-e .content > ul{
+    display: flex;
+    justify-content: space-between;
+}
+.n-e .content > ul > li{ width:32%; }
+.n-e .content > ul > li > figure{
+    position:relative;
+    border-radius: 30px;    
+    overflow: hidden;
+}
+.n-e .content > ul > li > figure > img{width:100%;}
+.n-e .content > ul > li > figure > figcaption{
+    background-color: #f00;
+    position:absolute; left:0; top:0;
+    width:80px; height:80px;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.n-e .content > ul > li > div{}
+.n-e .content > ul > li > div > b{}
+.n-e .content > ul > li > div > p{}
+
+.n-e .content .btn{}
+.n-e .content .btn > a{
+    background-color:#000;
+    color:#fff;
+    padding:20px 60px;
+    display:inline-block;
+    border-radius: 100px;
+}
+
+

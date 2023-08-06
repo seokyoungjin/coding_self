@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./flex.css" rel="stylesheet">
+</head>
+<body>
+<!-- 
+    4.flex.html
+    4.flex.css 
+-->
+    <article>
+        <h2>flex</h2>
+        <p> ※ flex 기본값
+
+            flex-direction:row; (가로방향)
+            flex-wrap:nowrap;   (가로 한줄)
+            align-content:flex-start; (상단정렬 - 세로 2줄 이상일때)
+            justify-content:flex-start; (좌측 정렬)
+            align-items:stretch; (아이템 세로크기 동일)
+
+            ex)
+            display:flex; 
+            justify-content: space-between;
+        </p>
+
+        <ul class="flex-1">
+            <li><img src="./img/01.jpg" alt=""></li>
+            <li><img src="./img/02.jpg" alt=""></li>
+            <li><img src="./img/03.jpg" alt=""></li>
+        </ul>
+
+        <p class="mt200"> ex) 
+            display:flex; 
+            flex-wrap: wrap;
+            justify-content: space-between;
+        </p>
+        <ul class="flex-2">
+            <li><img src="./img/01.jpg" alt=""></li>
+            <li><img src="./img/02.jpg" alt=""></li>
+            <li><img src="./img/03.jpg" alt=""></li>
+            <li><img src="./img/04.jpg" alt=""></li>
+            <li><img src="./img/05.jpg" alt=""></li>
+            <li><img src="./img/06.jpg" alt=""></li>
+        </ul>
+
+
+        <p class="mt200"> ex) 2줄(가로,세로 정렬)
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content: space-between;
+            height:400px;
+        </p>
+        <ul class="flex-3">
+            <li>01</li>
+            <li>02</li>
+            <li>03</li>
+            <li>04</li>
+            <li>05</li>
+            <li>06</li>
+            <li>07</li>
+            <li>08</li>
+            <li>09</li>
+        </ul>
+
+        <p class="mt200"> ex) 중앙정렬
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        </p>
+        <ul class="flex-4">
+            <li>
+                아이템을 중앙 정렬하는 방법
+            </li>
+        </ul>
+
+        <p> ex) 자식요소 순서바꾸기
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .flex-5 > li:nth-of-type(even) > p{ order:2; }
+            .flex-5 > li:nth-of-type(even) > div{ order:1; }
+        </p>
+        <ul class="flex-5">
+            <li>
+                <p><img src="./img/01.jpg" alt=""></p>
+                <div> 어쩌구저쩌구... </div>
+            </li>
+            <li>
+                <p><img src="./img/02.jpg" alt=""></p>
+                <div> 어쩌구저쩌구... </div>
+            </li>
+            <li>
+                <p><img src="./img/03.jpg" alt=""></p>
+                <div> 어쩌구저쩌구... </div>
+            </li>
+            <li>
+                <p><img src="./img/04.jpg" alt=""></p>
+                <div> 어쩌구저쩌구... </div>
+            </li>
+        </ul>
+
+        <p class="mt200">ex) 아이템의 가로크기 비율 처리
+            .flex-6 { display:flex; }
+            .flex-6 > li{ flex-grow: 1; }
+            .flex-6 > li:hover{ flex-grow: 8; }
+        </p>
+        <ul class="flex-6">
+            <li class="active">01</li>
+            <li>02</li>
+            <li>03</li>
+            <li>04</li>
+            <li>05</li>
+        </ul>
+
+
+        <p class="mt200">ex) 자식너비 감소안함
+            .flex-7{ display: flex; }
+            .flex-7 > li{ flex-shrink: 0; }
+        </p>
+        <ul class="flex-7">
+            <li>01</li>
+            <li>02</li>
+            <li>03</li>
+            <li>04</li>
+            <li>05</li>
+        </ul>
+
+    </article>
+
+    
+
+
+
+
+</body>
+</html>

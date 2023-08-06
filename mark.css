@@ -1,0 +1,26 @@
+.ex-1{
+    width:400px;
+    margin:100px auto;
+    padding:40px;
+    border:1px solid #000;
+    box-sizing: border-box;
+}
+.ex-1 > h2{
+    margin:0;
+    font-size:32px;
+}
+.ex-1 > p{
+    font-size:16px;
+    line-height: 180%;
+    color:#555;
+}
+.ex-1 > p > span{color:#f00;}
+
+.ex-1 > a{
+    border:1px solid #000;
+    background-color: #ff0;
+    padding:10px 30px;
+    display: inline-block;
+}
+
+

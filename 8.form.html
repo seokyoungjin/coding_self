@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./8.form.css" rel="stylesheet">
+</head>
+<body>
+<!--     
+    fieldset,legend,
+    form(input, select, textarea, button)
+-->
+
+<fieldset>
+    <legend>Form Tag</legend>
+    <form action="http://naver.com">
+        <ul>
+            <li>
+                <label for="id">아이디</label>
+                <input type="text" name="id" id="id" placeholder="아이디" required>
+            </li>
+            <li>
+                <label>패스워드</label>
+                <input type="password">
+            </li>
+            <li>
+                <label>이메일</label>
+                <input type="email">
+            </li>
+            <li>
+                <label>검색</label>
+                <input type="search">
+            </li>
+            <li>
+                <label>전화번호</label>
+                <input type="tel">
+            </li>
+            <li>
+                <label>수량</label>
+                <input type="number" value="1" min="1" max="5">
+            </li>
+            <li>
+                <label>색상</label>
+                <input type="color" value="#ff0000">
+            </li>
+            <li>
+                <label>날짜</label>
+                <input type="date" value="2022-05-13" 
+                        min="2022-05-09" max="2022-05-13">
+            </li>
+            <li>
+                <label>파일</label>
+                <input type="file">
+            </li>
+            <li>
+                <label>약관동의</label>
+                <input type="checkbox">
+            </li>
+            <li>
+                <label>성별</label>
+                <input type="radio" name="gender" checked> 남
+                <input type="radio" name="gender"> 여
+            </li>
+
+            <li>
+                <label>년월/시간/모두</label>
+                <input type="month">
+                <input type="time">
+                <input type="datetime-local">
+            </li>
+            <li>
+                <label>범위선택</label>
+                <input type="range" id="a"> + 
+                <input type="number" id="b"> =
+                <output name="result" for="b a">60</output>
+            </li>
+            <li>
+                <label>진행상태</label>
+                <progress max="70" value="30"></progress>
+            </li>
+            <li>
+                <label> 지역 </label>
+                <select>
+                    <option>서울</option>
+                    <option>경기</option>
+                </select>
+            </li>
+            <li>
+                <label> 국적 </label>
+                <input list="aaa">
+                <datalist id="aaa">
+                    <option value="korea"></option>
+                    <option value="india"></option>
+                    <option value="greece"></option>
+                    <option value="d"></option>
+                </datalist>
+            </li>
+            <li>
+                <label> 소개 </label>
+                <textarea cols="50" rows="5"></textarea>
+            </li>
+            <li>
+                <button>01</button> <button>02</button> <button>03</button>
+            </li>
+            <li>
+                <input type="submit" value="저장">
+                <input type="reset" value="취소">
+            </li>
+        </ul>
+    </form>
+</fieldset>
+
+
+<div class="ex">
+    <input type="checkbox" id="btn">
+    <label  for="btn"> <span></span> </label>
+</div>
+
+
+<div class="ex2">
+    <input type="radio" name="ex2" id="it" checked>
+    <input type="radio" name="ex2" id="history">
+
+    <label for="it">인사말</label>
+    <label for="history">연혁</label>
+     
+    <div class="content">
+        <div> content 01 </div>
+        <div> content 02 </div>
+    </div>
+</div>
+
+
+    
+</body>
+</html>
+<!-- 8.form.html / 8.form.css -->
